@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Career - Biggsmash Outreach{% endblock %}
+
+{% block content %}
+<div class="page-header career-banner">
+    <div class="container">
+        <h1>Career at Biggsmash Outreach</h1>
+        <p>Join our team and help shape the future of digital communication</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-block" style="margin-bottom: 40px;">
+                <h2>Why Work With Us?</h2>
+                <p>At Biggsmash Outreach, we believe in nurturing talent and providing opportunities for professional growth. Join a team of passionate professionals who are making a real difference in how government bodies communicate with citizens.</p>
+                <p>We offer a dynamic work environment, competitive compensation, and the opportunity to work on challenging projects that have a meaningful impact on society.</p>
+            </div>
+        </div>
+
+        {% if jobs %}
+        <div class="career-grid">
+            {% for job in jobs %}
+            <div class="career-card">
+                <div class="job-header">
+                    <h3>{{ job.title }}</h3>
+                    <span class="job-type">{{ job.job_type }}</span>
+                </div>
+                <div class="job-meta">
+                    <span><i class="fas fa-building"></i> {{ job.department }}</span>
+                    <span><i class="fas fa-map-marker-alt"></i> {{ job.location }}</span>
+                </div>
+                <p class="description">{{ job.description|truncatewords:30 }}</p>
+                <a href="mailto:biggsmashoutreachopcpvt.ltd@gmail.com?subject=Application for {{ job.title }}" class="btn-apply">Apply Now</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <h3>No Current Openings</h3>
+            <p>We're always looking for talented individuals. Send your resume to <strong>biggsmashoutreachopcpvt.ltd@gmail.com</strong> and we'll keep you in mind for future opportunities.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="cta-section section-blue">
+    <div class="container">
+        <h2>Don't See Your Role?</h2>
+        <p>We're always open to talented individuals. Send us your resume and tell us how you can contribute to our mission.</p>
+        <a href="mailto:biggsmashoutreachopcpvt.ltd@gmail.com" class="btn-primary">Send Your Resume</a>
+    </div>
+</section>
+{% endblock %}

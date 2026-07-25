@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Biggsmash Outreach{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-menu" id="navMenu">
+                <a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+                
+                <div class="services-dropdown" id="servicesDropdown">
+                    <a href="{% url 'services_list' %}" class="nav-link">
+                        Services <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="{% url 'service_detail' 'web-design-development' %}">Web Design & Development</a>
+                        <a href="{% url 'service_detail' 'web-tools' %}">Web Tools</a>
+                        <a href="{% url 'service_detail' 'web-mobile-applications' %}">Web & Mobile Applications</a>
+                        <a href="{% url 'service_detail' 'digital-marketing' %}">Digital Marketing</a>
+                        <a href="{% url 'service_detail' 'search-engine-optimization' %}">Search Engine Optimization</a>
+                        <a href="{% url 'service_detail' 'social-media-marketing' %}">Social Media Marketing</a>
+                        <a href="{% url 'service_detail' 'ppc-advertisement' %}">PPC Advertisement</a>
+                        <a href="{% url 'service_detail' 'content-marketing' %}">Content Marketing</a>
+                        <a href="{% url 'service_detail' 'digital-branding-publicity' %}">Digital Branding & Publicity</a>
+                        <a href="{% url 'service_detail' 'web-analytics' %}">Web Analytics</a>
+                        <a href="{% url 'service_detail' 'mobile-marketing' %}">Mobile Marketing</a>
+                        <a href="{% url 'service_detail' 'market-research' %}">Market Research</a>
+                        <a href="{% url 'service_detail' 'mobile-interfaces' %}">Mobile Interfaces</a>
+                        <a href="{% url 'service_detail' 'media-portals' %}">Media Portals</a>
+                        <a href="{% url 'service_detail' 'internet-solutions' %}">Internet Solutions</a>
+                        <a href="{% url 'service_detail' 'web-technologies' %}">Web Technologies</a>
+                        <a href="{% url 'service_detail' 'grassroots-mobilization' %}">Grassroots Mobilization & Volunteer Management</a>
+                    </div>
+                </div>
+
+                <a href="{% url 'about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+                <a href="{% url 'blog_list' %}" class="nav-link {% if request.resolver_match.url_name == 'blog_list' %}active{% endif %}">Blogs</a>
+                <a href="{% url 'career' %}" class="nav-link {% if request.resolver_match.url_name == 'career' %}active{% endif %}">Career</a>
+                <a href="{% url 'contact' %}" class="nav-link btn-contact">Get in Touch</a>
+            </div>
+
+            <a href="{% url 'home' %}" class="nav-logo">
+                <span class="logo-text">Biggsmash</span>
+            </a>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Biggsmash Outreach (OPC) Pvt. Ltd.</h3>
+                    <p>A new-age outreach and communications agency with a proven track record of working with government bodies and public institutions. We specialize in strategy-driven, people-centric digital communication.</p>
+                    <p class="gst-badge" style="background: rgba(59,130,246,0.2); color: #60A5FA;">GST: 10AALCB1428M1ZU</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'services_list' %}">Services</a></li>
+                        <li><a href="{% url 'blog_list' %}">Blogs</a></li>
+                        <li><a href="{% url 'career' %}">Career</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{% url 'service_detail' 'web-design-development' %}">Web Design</a></li>
+                        <li><a href="{% url 'service_detail' 'digital-marketing' %}">Digital Marketing</a></li>
+                        <li><a href="{% url 'service_detail' 'search-engine-optimization' %}">SEO</a></li>
+                        <li><a href="{% url 'service_detail' 'social-media-marketing' %}">Social Media</a></li>
+                        <li><a href="{% url 'service_detail' 'content-marketing' %}">Content Marketing</a></li>
+                        <li><a href="{% url 'service_detail' 'grassroots-mobilization' %}">Grassroots Mobilization</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <span class="icon"><i class="fas fa-phone"></i></span>
+                        <p>8787471137</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="icon"><i class="fas fa-envelope"></i></span>
+                        <p>biggsmashoutreachopcpvt.ltd@gmail.com</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <p>Shobha Sadan, Harnichak, Anisabad, Patna-800002, Bihar</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <p>Palace Compound, Near ICFAI University Office, Agartala-799001, Tripura</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <p>Gurgaon, UP</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Biggsmash Outreach (OPC) Pvt. Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

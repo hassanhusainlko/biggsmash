@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ post.title }} - Biggsmash Outreach{% endblock %}
+
+{% block content %}
+<section class="blog-detail">
+    <div class="container">
+        <div class="blog-header">
+            <h1>{{ post.title }}</h1>
+            <div class="meta">
+                <span class="author">{{ post.author }}</span> | 
+                <span>{{ post.publish_date|date:"F d, Y" }}</span>
+            </div>
+        </div>
+
+        {% if post.featured_image %}
+        <div style="max-width: 800px; margin: 0 auto 40px;">
+            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" style="width: 100%; border-radius: 12px;">
+        </div>
+        {% endif %}
+
+        <div class="blog-body">
+            {{ post.content|safe }}
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="{% url 'blog_list' %}" class="btn-secondary">← Back to Blogs</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

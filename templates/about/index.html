@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - Biggsmash Outreach{% endblock %}
+
+{% block content %}
+<div class="page-header about-banner">
+    <div class="container">
+        <h1>About Biggsmash Outreach</h1>
+        <p>Strategy-driven, people-centric digital communication agency</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-block">
+                <h2>Who We Are</h2>
+                <p>Biggsmash Outreach (OPC) Pvt. Ltd. is a new-age outreach and communications agency with a proven track record of working with government bodies and public institutions. We specialize in strategy-driven, people-centric digital communication — combining content, design, and data to help public bodies reach citizens more effectively.</p>
+                <p>Our team of experienced professionals brings together expertise in political strategy, digital marketing, data analytics, and grassroots mobilization to deliver comprehensive solutions that make a real impact.</p>
+            </div>
+
+            <div class="about-block">
+                <h2>Our Mission</h2>
+                <p>We are committed to bridging the gap between government institutions and citizens through innovative digital communication strategies. Our mission is to empower public bodies with the tools, strategies, and support they need to communicate effectively with the people they serve.</p>
+                <p>We believe in integrity, transparency, and results-driven approaches that build trust and foster meaningful engagement between institutions and communities.</p>
+            </div>
+
+            <div class="about-block">
+                <h2>How We Work</h2>
+                <p>Our approach combines data-driven insights with creative excellence. We begin by understanding your unique challenges and objectives, then develop customized strategies that deliver measurable results. Our process includes:</p>
+                <p>1. Discovery & Research - Understanding your goals, audience, and challenges<br>
+                2. Strategy Development - Creating tailored communication plans<br>
+                3. Implementation - Executing campaigns with precision<br>
+                4. Monitoring & Optimization - Continuous improvement based on data<br>
+                5. Reporting - Transparent performance tracking and insights</p>
+            </div>
+
+            <div class="about-block">
+                <h2>Founder</h2>
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="{% static 'images/team.jpg' %}" alt="Dhiraj Kumar - Founder" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <div class="founder-info">
+                        <h3>Dhiraj Kumar</h3>
+                        <p class="title">Founder & CEO, Biggsmash Outreach (OPC) Pvt. Ltd.</p>
+                        <p>Dhiraj Kumar is a seasoned political strategist and the visionary behind Biggsmash Outreach (OPC) Pvt. Ltd. With over 6 years of experience in the political consultancy field, Dhiraj has built Biggsmash into a trusted name in political consultancy.</p>
+                        <p>Known for a sharp strategic mind and innovative campaign approaches, Dhiraj Kumar has worked with leading political parties and Political Consultancy firms, bringing a wealth of experience in election management, voter mobilization, and digital strategy.</p>
+                        <p>Prior to founding Biggsmash, Dhiraj worked with leading political parties and Political Consultancy firms, bringing a wealth of experience in election management, voter mobilization, and digital strategy.</p>
+                        <p>Dhiraj Kumar is passionate about empowering leaders and candidates to connect with voters and win elections through integrity, smart strategies, and a people-centric approach. With a clear vision and a passion for Bihar's political transformation, Dhiraj and the Biggsmash team are ready to support your journey to success.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-block">
+                <h2>Previous Work & Achievements</h2>
+                <p><strong>TTAADC Engagement:</strong> Ongoing engagement with Tripura Tribal Areas Autonomous District Council (TTAADC) since July 2024, providing comprehensive communication and outreach solutions.</p>
+                <p><strong>Government Partnerships:</strong> Successfully partnered with multiple government bodies and public institutions across Bihar, Tripura, and other states for digital communication projects.</p>
+                <p><strong>Election Campaigns:</strong> Managed and executed successful election campaigns using data-driven strategies and innovative digital communication methods.</p>
+                <p><strong>Digital Transformations:</strong> Helped numerous public institutions establish strong digital presences and connect with citizens through modern communication channels.</p>
+            </div>
+
+            <div class="about-block">
+                <h2>Our Expertise</h2>
+                <p>We are experts in designing and developing websites, web tools, web and mobile applications, digital marketing services, search engine optimization, social media marketing, PPC advertisement, content marketing, digital branding and publicity, web analytics, mobile marketing, market research, mobile interfaces, media portals, Internet solutions, and web technologies.</p>
+                <p>Additionally, we specialize in grassroots mobilization and volunteer management, helping organizations build strong community networks and drive citizen participation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section section-blue">
+    <div class="container">
+        <h2>Want to Work With Us?</h2>
+        <p>Let's discuss how Biggsmash Outreach can help your organization achieve its communication goals.</p>
+        <a href="{% url 'contact' %}" class="btn-primary">Get in Touch</a>
+    </div>
+</section>
+{% endblock %}

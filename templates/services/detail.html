@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ service.title }} - Biggsmash Outreach{% endblock %}
+
+{% block content %}
+<div class="page-header services-banner">
+    <div class="container">
+        <h1>{{ service.icon }} {{ service.title }}</h1>
+        <p>Professional {{ service.title|lower }} services for government bodies</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="service-detail">
+            <div class="content">
+                {{ service.description|safe }}
+            </div>
+
+            <div class="features">
+                <h3>Key Features & Benefits</h3>
+                <ul>
+                    {% for feature in service.features %}
+                    <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="cta">
+                <h3>Ready to Get Started?</h3>
+                <p style="margin-bottom: 20px; color: var(--dark-gray);">Contact us today to discuss how we can help your organization with {{ service.title|lower }}.</p>
+                <a href="{% url 'contact' %}" class="btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,179 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Biggsmash Outreach
+- Strategy-Driven Digital Communication{% endblock %} {% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Strategy-Driven, <span>People-Centric</span> Digital Communication</h1>
+    <p>
+      We help government bodies and public institutions reach citizens more
+      effectively through content, design, and data-driven strategies.
+    </p>
+    <a href="{% url 'contact' %}" class="btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>About Biggsmash Outreach</h3>
+        <p>
+          Biggsmash Outreach (OPC) Pvt. Ltd. is a new-age outreach and
+          communications agency with a proven track record of working with
+          government bodies and public institutions.
+        </p>
+        <p>
+          We specialize in strategy-driven, people-centric digital communication
+          — combining content, design, and data to help public bodies reach
+          citizens more effectively.
+        </p>
+        <a href="{% url 'about' %}" class="btn-primary mt-20">Learn More</a>
+      </div>
+      <div class="about-image">
+        <img
+          src="{% static 'images/about-section.avif' %}"
+          alt="About Biggsmash Outreach"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+          "
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Biggsmash Section -->
+<section class="section section-blue why-section">
+  <div class="container">
+    <h2 class="section-title">Why Biggsmash Outreach?</h2>
+    <p class="section-subtitle">
+      We deliver results through experience, innovation, and unwavering
+      commitment to our clients
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon">👥</div>
+        <h4>Experienced Professionals</h4>
+        <p>
+          Our team comprises seasoned political strategists, communication
+          specialists, media experts, data analysts, and field operators with
+          years of experience.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">🎯</div>
+        <h4>Comprehensive Solutions</h4>
+        <p>
+          We don't believe in one-size-fits-all. Every client has different
+          problems, and so does every solution. Our services are completely
+          customizable.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">🚀</div>
+        <h4>Cutting-Edge Technology</h4>
+        <p>
+          We leverage advanced tools for digital outreach, data analytics, and
+          campaign management. From social media monitoring to real-time
+          feedback.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">🏆</div>
+        <h4>Proven Track Record</h4>
+        <p>
+          We have happy clients not because of our promise but because we make
+          it happen and deliver what we promise. Success speaks for itself.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">🤝</div>
+        <h4>Integrity & Transparency</h4>
+        <p>
+          Our approach is built on transparency, accountability, and ethical
+          practices, ensuring adherence to all legal norms and electoral
+          guidelines.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="icon">⏰</div>
+        <h4>24/7 Support</h4>
+        <p>
+          Our team works round-the-clock with a robust on-the-ground presence.
+          We are always there to handle any challenges during any campaign
+          process.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Background & Achievements -->
+<section class="section achievements-section">
+  <div class="container">
+    <h2 class="section-title">Background & Achievements</h2>
+    <p class="section-subtitle">
+      Building trust through consistent performance and impactful results
+      (2024-26)
+    </p>
+
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <h4>TTAADC Engagement</h4>
+        <p>
+          Ongoing engagement with Tripura Tribal Areas Autonomous District
+          Council (TTAADC) since July 2024, providing comprehensive
+          communication and outreach solutions.
+        </p>
+      </div>
+
+      <div class="achievement-card">
+        <h4>Government Partnerships</h4>
+        <p>
+          Successfully partnered with multiple government bodies and public
+          institutions across Bihar, Tripura, and other states for digital
+          communication projects.
+        </p>
+      </div>
+
+      <div class="achievement-card">
+        <h4>Digital Campaign Success</h4>
+        <p>
+          Delivered impactful digital campaigns that helped public institutions
+          connect with millions of citizens through innovative strategies.
+        </p>
+      </div>
+
+      <div class="achievement-card">
+        <h4>Certified & Registered</h4>
+        <p>GST Registered: <span class="gst-badge">10AALCB1428M1ZU</span></p>
+        <p>
+          Committed to full legal compliance and transparent business practices.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section section-blue">
+  <div class="container">
+    <h2>Ready to Make an Impact?</h2>
+    <p>
+      Let's discuss how Biggsmash Outreach can help your institution connect
+      with citizens more effectively.
+    </p>
+    <a href="{% url 'contact' %}" class="btn-primary">Get in Touch</a>
+  </div>
+</section>
+{% endblock %}
