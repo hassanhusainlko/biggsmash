@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-&whvg83q7l(sry1z-+_9&#xa1@2z6&g5tot$v+tqk=vxdnv357
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["hassan91.pythonanywhere.com"]
 
 
 # Application definition
@@ -125,7 +125,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # 3. The absolute path to the directory where `collectstatic` will gather all static files for production
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -135,5 +135,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000/",
-    "https://www.drhaleemacare.com",
+    "https://hassan91.pythonanywhere.com/",
 ]
