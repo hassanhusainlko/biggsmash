@@ -124,6 +124,9 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
+# 3. The absolute path to the directory where `collectstatic` will gather all static files for production
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
