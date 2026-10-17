@@ -21,6 +21,12 @@
             </div>
         </div>
 
+        {% if messages %}
+        {% for message in messages %}
+        <div class="form-alert">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
         {% if jobs %}
         <div class="career-grid">
             {% for job in jobs %}
@@ -34,7 +40,7 @@
                     <span><i class="fas fa-map-marker-alt"></i> {{ job.location }}</span>
                 </div>
                 <p class="description">{{ job.description|truncatewords:30 }}</p>
-                <a href="mailto:biggsmashoutreachopcpvt.ltd@gmail.com?subject=Application for {{ job.title }}" class="btn-apply">Apply Now</a>
+                <a href="{% url 'career_apply_job' job.id %}" class="btn-apply">Apply Now</a>
             </div>
             {% endfor %}
         </div>
@@ -50,8 +56,8 @@
 <section class="cta-section section-blue">
     <div class="container">
         <h2>Don't See Your Role?</h2>
-        <p>We're always open to talented individuals. Send us your resume and tell us how you can contribute to our mission.</p>
-        <a href="mailto:biggsmashoutreachopcpvt.ltd@gmail.com" class="btn-primary">Send Your Resume</a>
+        <p>We're always open to talented individuals. Apply with us and tell us how you can contribute to our mission.</p>
+        <a href="{% url 'career_apply' %}" class="btn-primary">Apply With Us</a>
     </div>
 </section>
 {% endblock %}

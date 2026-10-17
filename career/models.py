@@ -23,3 +23,25 @@ class JobPosting(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class JobApplication(models.Model):
+    job = models.ForeignKey(
+        JobPosting,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='applications',
+        help_text='Leave empty for a general (unlisted role) application.',
+    )
+    name = models.CharField(max_length=100)
+    mobile = models.CharField(max_length=15)
+    resume = models.FileField(upload_to='resumes/%Y/%m/')
+    applied_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-applied_at']
+
+    def __str__(self):
+        role = self.job.title if self.job else 'General Application'
+        return f'{self.name} - {role}'

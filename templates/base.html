@@ -15,30 +15,7 @@
             <div class="nav-menu" id="navMenu">
                 <a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
                 
-                <div class="services-dropdown" id="servicesDropdown">
-                    <a href="{% url 'services_list' %}" class="nav-link">
-                        Services <span class="dropdown-arrow"><i class="fas fa-chevron-down"></i></span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="{% url 'service_detail' 'web-design-development' %}">Web Design & Development</a>
-                        <a href="{% url 'service_detail' 'web-tools' %}">Web Tools</a>
-                        <a href="{% url 'service_detail' 'web-mobile-applications' %}">Web & Mobile Applications</a>
-                        <a href="{% url 'service_detail' 'digital-marketing' %}">Digital Marketing</a>
-                        <a href="{% url 'service_detail' 'search-engine-optimization' %}">Search Engine Optimization</a>
-                        <a href="{% url 'service_detail' 'social-media-marketing' %}">Social Media Marketing</a>
-                        <a href="{% url 'service_detail' 'ppc-advertisement' %}">PPC Advertisement</a>
-                        <a href="{% url 'service_detail' 'content-marketing' %}">Content Marketing</a>
-                        <a href="{% url 'service_detail' 'digital-branding-publicity' %}">Digital Branding & Publicity</a>
-                        <a href="{% url 'service_detail' 'web-analytics' %}">Web Analytics</a>
-                        <a href="{% url 'service_detail' 'mobile-marketing' %}">Mobile Marketing</a>
-                        <a href="{% url 'service_detail' 'market-research' %}">Market Research</a>
-                        <a href="{% url 'service_detail' 'mobile-interfaces' %}">Mobile Interfaces</a>
-                        <a href="{% url 'service_detail' 'media-portals' %}">Media Portals</a>
-                        <a href="{% url 'service_detail' 'internet-solutions' %}">Internet Solutions</a>
-                        <a href="{% url 'service_detail' 'web-technologies' %}">Web Technologies</a>
-                        <a href="{% url 'service_detail' 'grassroots-mobilization' %}">Grassroots Mobilization & Volunteer Management</a>
-                    </div>
-                </div>
+                <a href="{% url 'services_list' %}" class="nav-link {% if request.resolver_match.url_name == 'services_list' or request.resolver_match.url_name == 'service_detail' %}active{% endif %}">Services</a>
 
                 <a href="{% url 'about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
                 <a href="{% url 'blog_list' %}" class="nav-link {% if request.resolver_match.url_name == 'blog_list' %}active{% endif %}">Blogs</a>
@@ -86,12 +63,12 @@
                 <div class="footer-col">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="{% url 'service_detail' 'web-design-development' %}">Web Design</a></li>
-                        <li><a href="{% url 'service_detail' 'digital-marketing' %}">Digital Marketing</a></li>
-                        <li><a href="{% url 'service_detail' 'search-engine-optimization' %}">SEO</a></li>
-                        <li><a href="{% url 'service_detail' 'social-media-marketing' %}">Social Media</a></li>
-                        <li><a href="{% url 'service_detail' 'content-marketing' %}">Content Marketing</a></li>
-                        <li><a href="{% url 'service_detail' 'grassroots-mobilization' %}">Grassroots Mobilization</a></li>
+                        <li><a href="{% url 'service_detail' 'strategic-advisory-perception-intelligence' %}">Strategic Advisory</a></li>
+                        <li><a href="{% url 'service_detail' 'large-scale-event-management' %}">Event Management</a></li>
+                        <li><a href="{% url 'service_detail' 'mass-media-atl-advertising' %}">Mass Media & ATL</a></li>
+                        <li><a href="{% url 'service_detail' 'on-ground-btl-activations' %}">On-Ground & BTL</a></li>
+                        <li><a href="{% url 'service_detail' 'digital-media-creative-studio-web' %}">Digital & Creative</a></li>
+                        <li><a href="{% url 'service_detail' 'direct-tele-outreach-tech-operations' %}">Tele-Outreach & Tech</a></li>
                     </ul>
                 </div>
 

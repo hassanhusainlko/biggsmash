@@ -7,7 +7,7 @@
 <div class="page-header services-banner">
     <div class="container">
         <h1>Our Services</h1>
-        <p>Comprehensive digital solutions for government bodies and public institutions</p>
+        <p>Six integrated verticals delivered as one single-window strategic partner</p>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
             <div class="service-card">
                 <div class="icon">{{ service.icon }}</div>
                 <h3>{{ service.title }}</h3>
-                <p>{{ service.description|striptags|truncatewords:20 }}</p>
+                <p>{{ service.summary }}</p>
                 <a href="{% url 'service_detail' slug %}" class="read-more">Learn More →</a>
             </div>
             {% endfor %}

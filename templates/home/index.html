@@ -1,14 +1,83 @@
 {% extends 'base.html' %} {% load static %} {% block title %}Biggsmash Outreach
 - Strategy-Driven Digital Communication{% endblock %} {% block content %}
 <!-- Hero Section -->
+
 <section class="hero">
-  <div class="hero-content">
-    <h1>Strategy-Driven, <span>People-Centric</span> Digital Communication</h1>
-    <p>
-      We help government bodies and public institutions reach citizens more
-      effectively through content, design, and data-driven strategies.
-    </p>
-    <a href="{% url 'contact' %}" class="btn-primary">Contact Us</a>
+  <div class="hero-container">
+    <!-- Left: Hero Content -->
+    <div class="hero-content">
+      <span class="hero-badge">
+        <span class="badge-dot"></span>
+        Strategy. Creativity. Impact.
+      </span>
+
+      <h1>
+        Turning Your Vision Into
+        <span>Meaningful Impact.</span>
+      </h1>
+
+      <p class="hero-description">
+        We help businesses, government institutions, and individuals connect
+        with the right audiences through strategic communication, creative
+        content, and data-driven outreach.
+      </p>
+
+      <div class="hero-actions">
+        <a href="{% url 'contact' %}" class="btn-primary">
+          Let's Work Together
+          <span class="btn-arrow">&rarr;</span>
+        </a>
+
+        <a href="#services" class="btn-hero-outline"> Explore Our Services </a>
+      </div>
+
+      <div class="hero-trust">
+        <span class="trust-line"></span>
+        <p>Communication that connects. Strategy that delivers.</p>
+      </div>
+    </div>
+
+    <!-- Right: Visual Element -->
+    <div class="hero-visual">
+      <div class="hero-image-wrapper">
+        <img
+          src="{% static 'images/hero-chess.jpg' %}"
+          alt="Strategic thinking and purposeful communication"
+          class="hero-image"
+        />
+
+        <div class="hero-image-overlay"></div>
+
+        <div class="hero-floating-card">
+          <span class="floating-icon">&#8599;</span>
+          <div>
+            <strong>360° Approach</strong>
+            <p>One vision. Multiple possibilities.</p>
+          </div>
+        </div>
+
+        <div class="hero-image-caption">
+          <span class="caption-line"></span>
+          <span>Ideas into action</span>
+        </div>
+      </div>
+
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+    </div>
+  </div>
+
+  <!-- Audience Strip -->
+  <div class="hero-bottom">
+    <span class="hero-bottom-label">WHO WE WORK WITH</span>
+
+    <div class="hero-audience">
+      <span>Businesses</span>
+      <span>Government & Public Institutions</span>
+      <span>Individuals & Organizations</span>
+    </div>
+
+    <span class="hero-since">EST. 2022</span>
   </div>
 </section>
 
@@ -19,14 +88,19 @@
       <div class="about-text">
         <h3>About Biggsmash Outreach</h3>
         <p>
-          Biggsmash Outreach (OPC) Pvt. Ltd. is a new-age outreach and
-          communications agency with a proven track record of working with
-          government bodies and public institutions.
+          Biggsmash Outreach (OPC) Pvt. Ltd. provides complete end-to-end
+          strategic branding, marketing, and multi-channel communication
+          services. From high-level perception management down to ground-level
+          execution, we offer unified, turnkey solutions designed to scale
+          Individuals, Government & Public Institutions, and Commercial
+          Businesses.
         </p>
         <p>
-          We specialize in strategy-driven, people-centric digital communication
-          — combining content, design, and data to help public bodies reach
-          citizens more effectively.
+          Biggsmash Outreach operates as a single-window strategic agency,
+          eliminating the friction of multi-vendor execution. From high-level
+          policy strategy and data analytics down to on-ground field activation,
+          digital infrastructure, and live call-center operations, every
+          communication lever is managed under one roof.
         </p>
         <a href="{% url 'about' %}" class="btn-primary mt-20">Learn More</a>
       </div>
@@ -51,115 +125,160 @@
   <div class="container">
     <h2 class="section-title">Why Biggsmash Outreach?</h2>
     <p class="section-subtitle">
-      We deliver results through experience, innovation, and unwavering
-      commitment to our clients
+      Whether you are an Individual public leader, a Growing Business, or a
+      Government Institution, effective communication requires moving beyond
+      fragmented vendors and generic agencies. Biggsmash Outreach (OPC) Pvt.
+      Ltd. operates as a single-window strategic agency that adapts its 360°
+      ecosystem&mdash;combining strategy, data, media, events, and direct
+      outreach&mdash;to solve the exact challenges faced by each client tier.
     </p>
 
     <div class="why-grid">
-      <div class="why-card">
-        <div class="icon">👥</div>
-        <h4>Experienced Professionals</h4>
-        <p>
-          Our team comprises seasoned political strategists, communication
-          specialists, media experts, data analysts, and field operators with
-          years of experience.
-        </p>
-      </div>
+      <article class="tier-card">
+        <div class="tier-head">
+          <span class="tier-icon">👤</span>
+          <div>
+            <span class="tier-label">Individuals</span>
+            <h3>Political Leaders, Public Figures &amp; Executives</h3>
+          </div>
+        </div>
 
-      <div class="why-card">
-        <div class="icon">🎯</div>
-        <h4>Comprehensive Solutions</h4>
-        <p>
-          We don't believe in one-size-fits-all. Every client has different
-          problems, and so does every solution. Our services are completely
-          customizable.
-        </p>
-      </div>
+        <div class="tier-block tier-challenge">
+          <span class="tier-block-label">The Challenge</span>
+          <p>
+            Fragmented media presence, unmonitored public sentiment, lack of
+            direct constituent/audience contact, and vulnerability to sudden
+            narrative shifts.
+          </p>
+        </div>
 
-      <div class="why-card">
-        <div class="icon">🚀</div>
-        <h4>Cutting-Edge Technology</h4>
-        <p>
-          We leverage advanced tools for digital outreach, data analytics, and
-          campaign management. From social media monitoring to real-time
-          feedback.
-        </p>
-      </div>
+        <div class="tier-block tier-solution">
+          <span class="tier-block-label">Our Solution</span>
+          <p>
+            We engineer hyper-personalised personal branding and perception
+            strategies. From speechwriting, media placement, and viral digital
+            content to direct constituent outreach via call centers and
+            WhatsApp, we give leaders a reliable command center to build
+            enduring influence and navigate high-stakes moments.
+          </p>
+        </div>
+      </article>
 
-      <div class="why-card">
-        <div class="icon">🏆</div>
-        <h4>Proven Track Record</h4>
-        <p>
-          We have happy clients not because of our promise but because we make
-          it happen and deliver what we promise. Success speaks for itself.
-        </p>
-      </div>
+      <article class="tier-card">
+        <div class="tier-head">
+          <span class="tier-icon">🏢</span>
+          <div>
+            <span class="tier-label">Businesses &amp; Enterprises</span>
+            <h3>Corporations, Brands &amp; SMEs</h3>
+          </div>
+        </div>
 
-      <div class="why-card">
-        <div class="icon">🤝</div>
-        <h4>Integrity & Transparency</h4>
-        <p>
-          Our approach is built on transparency, accountability, and ethical
-          practices, ensuring adherence to all legal norms and electoral
-          guidelines.
-        </p>
-      </div>
+        <div class="tier-block tier-challenge">
+          <span class="tier-block-label">The Challenge</span>
+          <p>
+            High cost of multi-agency retainer models, fragmented ATL/BTL
+            execution, weak conversion tracking, and difficulty breaking into
+            regional/tier-2 &amp; tier-3 markets.
+          </p>
+        </div>
 
-      <div class="why-card">
-        <div class="icon">⏰</div>
-        <h4>24/7 Support</h4>
-        <p>
-          Our team works round-the-clock with a robust on-the-ground presence.
-          We are always there to handle any challenges during any campaign
-          process.
-        </p>
-      </div>
+        <div class="tier-block tier-solution">
+          <span class="tier-block-label">Our Solution</span>
+          <p>
+            We provide a single-roof marketing engine that drives measurable
+            revenue growth and brand visibility. By combining precision
+            performance ads, outdoor branding, high-impact corporate event
+            production, PR, and lead generation call centers, we accelerate
+            market expansion without vendor friction.
+          </p>
+        </div>
+      </article>
+
+      <article class="tier-card">
+        <div class="tier-head">
+          <span class="tier-icon">🏛️</span>
+          <div>
+            <span class="tier-label">Government &amp; Public Institutions</span>
+            <h3>Departments, PSUs &amp; Municipalities</h3>
+          </div>
+        </div>
+
+        <div class="tier-block tier-challenge">
+          <span class="tier-block-label">The Challenge</span>
+          <p>
+            Complex policy language failing to reach beneficiaries, low uptake
+            of welfare schemes, strict regulatory compliance demands, and
+            logistical hurdles in managing mega public events and mass field
+            drives.
+          </p>
+        </div>
+
+        <div class="tier-block tier-solution">
+          <span class="tier-block-label">Our Solution</span>
+          <p>
+            We specialise in institutional-grade policy translation,
+            multi-lingual communications, and large-scale public logistics. We
+            translate dense government directives into simple, culturally
+            relevant narratives deployed across national media, ground-level LED
+            vans, mass SMS/IVR broadcasts, and on-ground activations.
+          </p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- Background & Achievements -->
+<!-- Key Strategic Milestones -->
 <section class="section achievements-section">
   <div class="container">
-    <h2 class="section-title">Background & Achievements</h2>
+    <h2 class="section-title">Key Strategic Milestones</h2>
     <p class="section-subtitle">
-      Building trust through consistent performance and impactful results
-      (2024-26)
+      From a unified, single-window communications agency to a pan-India,
+      full-spectrum outreach partner
     </p>
 
-    <div class="achievements-grid">
-      <div class="achievement-card">
-        <h4>TTAADC Engagement</h4>
-        <p>
-          Ongoing engagement with Tripura Tribal Areas Autonomous District
-          Council (TTAADC) since July 2024, providing comprehensive
-          communication and outreach solutions.
-        </p>
+    <div class="milestones">
+      <div class="milestone">
+        <div class="milestone-year">2022</div>
+        <div class="milestone-card">
+          <p>
+            <strong>Founded Biggsmash Outreach (OPC) Pvt. Ltd.</strong> as a
+            unified, single-window communications agency.
+          </p>
+        </div>
       </div>
 
-      <div class="achievement-card">
-        <h4>Government Partnerships</h4>
-        <p>
-          Successfully partnered with multiple government bodies and public
-          institutions across Bihar, Tripura, and other states for digital
-          communication projects.
-        </p>
+      <div class="milestone">
+        <div class="milestone-year">2023</div>
+        <div class="milestone-card">
+          <p>
+            <strong>Pan-India Expansion:</strong> Established operational hubs
+            in Patna, Agartala, and Gurugram to serve North (NCR), East, and
+            Northeast India.
+          </p>
+        </div>
       </div>
 
-      <div class="achievement-card">
-        <h4>Digital Campaign Success</h4>
-        <p>
-          Delivered impactful digital campaigns that helped public institutions
-          connect with millions of citizens through innovative strategies.
-        </p>
+      <div class="milestone">
+        <div class="milestone-year">2024</div>
+        <div class="milestone-card">
+          <p>
+            <strong>Full-Spectrum Infrastructure:</strong> Integrated in-house
+            call centers, digital media teams, BTL field units, and large-scale
+            event production capabilities under one roof.
+          </p>
+        </div>
       </div>
 
-      <div class="achievement-card">
-        <h4>Certified & Registered</h4>
-        <p>GST Registered: <span class="gst-badge">10AALCB1428M1ZU</span></p>
-        <p>
-          Committed to full legal compliance and transparent business practices.
-        </p>
+      <div class="milestone">
+        <div class="milestone-year">2025</div>
+        <div class="milestone-card">
+          <p>
+            <strong>Multi-Sector Impact:</strong> Successfully executed
+            campaigns spanning public health awareness, youth skill missions,
+            corporate launches, and executive reputation management.
+          </p>
+        </div>
       </div>
     </div>
   </div>

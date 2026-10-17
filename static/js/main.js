@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
-    const servicesDropdown = document.getElementById('servicesDropdown');
 
     // Mobile menu toggle
     if (hamburger) {
@@ -9,19 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
-    }
-
-    // Services dropdown on mobile
-    if (servicesDropdown) {
-        const dropdownLink = servicesDropdown.querySelector('.nav-link');
-        if (dropdownLink) {
-            dropdownLink.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    servicesDropdown.classList.toggle('open');
-                }
-            });
-        }
     }
 
     // Close menu when clicking outside

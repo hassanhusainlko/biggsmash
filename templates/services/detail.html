@@ -7,24 +7,26 @@
 <div class="page-header services-banner">
     <div class="container">
         <h1>{{ service.icon }} {{ service.title }}</h1>
-        <p>Professional {{ service.title|lower }} services for government bodies</p>
+        <p>Delivered as part of our 360° single-window communications ecosystem</p>
     </div>
 </div>
 
 <section class="section">
     <div class="container">
         <div class="service-detail">
+            {% if service.intro %}
             <div class="content">
-                {{ service.description|safe }}
+                <p>{{ service.intro }}</p>
             </div>
+            {% endif %}
 
-            <div class="features">
-                <h3>Key Features & Benefits</h3>
-                <ul>
-                    {% for feature in service.features %}
-                    <li>{{ feature }}</li>
-                    {% endfor %}
-                </ul>
+            <div class="service-items">
+                {% for item in service.items %}
+                <div class="service-item">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.text }}</p>
+                </div>
+                {% endfor %}
             </div>
 
             <div class="cta">
