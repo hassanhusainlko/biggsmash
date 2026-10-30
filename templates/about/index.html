@@ -1,87 +1,63 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}About Us - Biggsmash Outreach{% endblock %}
+{% block title %}About — Biggsmash Outreach{% endblock %}
+{% block description %}Biggsmash Outreach is a single-window strategic communications agency founded in 2022.{% endblock %}
 
 {% block content %}
-<div class="page-header about-banner">
-    <div class="container">
-        <h1>About Biggsmash Outreach</h1>
-        <p>Strategy-driven, people-centric digital communication agency</p>
-    </div>
-</div>
-
-<section class="section">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-block">
-                <h2>Who We Are</h2>
-                <p>Biggsmash Outreach (OPC) Pvt. Ltd. is a new-age outreach and communications agency with a proven track record of working with government bodies and public institutions. We specialize in strategy-driven, people-centric digital communication — combining content, design, and data to help public bodies reach citizens more effectively.</p>
-                <p>Our team of experienced professionals brings together expertise in political strategy, digital marketing, data analytics, and grassroots mobilization to deliver comprehensive solutions that make a real impact.</p>
-            </div>
-
-            <div class="about-block">
-                <h2>Our Mission</h2>
-                <p>We are committed to bridging the gap between government institutions and citizens through innovative digital communication strategies. Our mission is to empower public bodies with the tools, strategies, and support they need to communicate effectively with the people they serve.</p>
-                <p>We believe in integrity, transparency, and results-driven approaches that build trust and foster meaningful engagement between institutions and communities.</p>
-            </div>
-
-            <div class="about-block">
-                <h2>How We Work</h2>
-                <p>Our approach combines data-driven insights with creative excellence. We begin by understanding your unique challenges and objectives, then develop customized strategies that deliver measurable results. Our process includes:</p>
-                <p>1. Discovery & Research - Understanding your goals, audience, and challenges<br>
-                2. Strategy Development - Creating tailored communication plans<br>
-                3. Implementation - Executing campaigns with precision<br>
-                4. Monitoring & Optimization - Continuous improvement based on data<br>
-                5. Reporting - Transparent performance tracking and insights</p>
-            </div>
-
-            <div class="about-block">
-                <h2>About the Founder</h2>
-                <div class="founder-card">
-                    <div class="founder-image">
-                        <img src="{% static 'images/team.jpg' %}" alt="Dhiraj Kumar - Founder & Director" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
-                    </div>
-                    <div class="founder-info">
-                        <h3>Dhiraj Kumar</h3>
-                        <p class="title">Founder &amp; Director, Biggsmash Outreach (OPC) Pvt. Ltd.</p>
-
-                        <blockquote class="founder-quote">
-                            &ldquo;Effective communication is not merely about
-                            transmitting a message&mdash;it is about shaping
-                            perception, engineering trust, and driving measurable
-                            action at every tier of society.&rdquo;
-                        </blockquote>
-
-                        <p>Dhiraj Kumar is a seasoned public communications advisor and strategist, and the visionary leader behind Biggsmash Outreach (OPC) Pvt. Ltd. With over 8 years of deep domain experience in campaign architecture, political strategy, and corporate advisory, Dhiraj has pioneered a modern approach to integrated communications in India.</p>
-                        <p>Prior to founding Biggsmash Outreach in 2022, Dhiraj worked with leading consultancy firms, orchestrating high-stakes political campaigns, public policy rollouts, and institutional perception strategies. Recognizing that public figures, corporate entities, and government bodies were struggling with fragmented, multi-vendor communication models, he engineered Biggsmash Outreach to serve as a comprehensive, single-window strategic partner.</p>
-                        <p>Under his leadership, Biggsmash Outreach has evolved into a multi-regional power center operating across Patna (HQ), Agartala (Northeast Regional Hub), and Gurugram (NCR Regional Hub). His sharp analytical capabilities, deep understanding of regional demographic nuances, and commitment to data-backed execution have established Biggsmash as a trusted partner for public leaders, business enterprises, and state institutions across India.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="about-block">
-                <h2>Previous Work & Achievements</h2>
-                <p><strong>TTAADC Engagement:</strong> Ongoing engagement with Tripura Tribal Areas Autonomous District Council (TTAADC) since July 2024, providing comprehensive communication and outreach solutions.</p>
-                <p><strong>Government Partnerships:</strong> Successfully partnered with multiple government bodies and public institutions across Bihar, Tripura, and other states for digital communication projects.</p>
-                <p><strong>Election Campaigns:</strong> Managed and executed successful election campaigns using data-driven strategies and innovative digital communication methods.</p>
-                <p><strong>Digital Transformations:</strong> Helped numerous public institutions establish strong digital presences and connect with citizens through modern communication channels.</p>
-            </div>
-
-            <div class="about-block">
-                <h2>Our Expertise</h2>
-                <p>We are experts in designing and developing websites, web tools, web and mobile applications, digital marketing services, search engine optimization, social media marketing, PPC advertisement, content marketing, digital branding and publicity, web analytics, mobile marketing, market research, mobile interfaces, media portals, Internet solutions, and web technologies.</p>
-                <p>Additionally, we specialize in grassroots mobilization and volunteer management, helping organizations build strong community networks and drive citizen participation.</p>
-            </div>
-        </div>
-    </div>
+<section class="pagehero">
+  <div class="blob o" data-parallax="0.5" style="width:640px;height:640px;right:-200px;top:6%"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">About Biggsmash Outreach</div>
+    <h1 style="margin-top:26px"><span class="mask"><span>Every powerful idea</span></span><span class="mask"><span style="--i:1">deserves to be <em>heard.</em></span></span></h1>
+  </div>
 </section>
 
-<section class="cta-section section-blue">
-    <div class="container">
-        <h2>Want to Work With Us?</h2>
-        <p>Let's discuss how Biggsmash Outreach can help your organization achieve its communication goals.</p>
-        <a href="{% url 'contact' %}" class="btn-primary">Get in Touch</a>
+<section class="pad" style="padding-top:0">
+  <div class="wrap twocol">
+    <p class="lead" style="color:var(--ink);font-size:clamp(19px,1.8vw,24px)" data-slide="left">Biggsmash Outreach (OPC) Pvt. Ltd. provides complete end-to-end strategic branding, marketing and multi-channel communication services — from high-level perception management down to ground-level execution.</p>
+    <p class="lead" data-slide="right">We operate as a single-window strategic agency, eliminating the friction of multi-vendor execution. Policy strategy, data analytics, field activation, digital infrastructure and live call-centre operations — every communication lever, managed under one roof.</p>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap stats">
+    <div data-reveal="up" data-i="0"><b data-count="2022">0</b><span>Founded</span></div>
+    <div data-reveal="up" data-i="1"><b data-count="3">0</b><span>Regional hubs</span></div>
+    <div data-reveal="up" data-i="2"><b data-count="6">0</b><span>Service verticals</span></div>
+    <div data-reveal="up" data-i="3"><b data-count="1">0</b><span>Roof. One agency.</span></div>
+  </div>
+</section>
+
+<section class="dark pad" style="overflow:hidden">
+  <div class="blob o" data-parallax="0.6" style="width:620px;height:620px;left:-240px;bottom:-200px"></div>
+  <div class="wrap founder">
+    <div class="portrait" data-flip data-i="0"><em class="tag">FOUNDER &amp; DIRECTOR</em><span>DK</span></div>
+    <div>
+      <div class="eyebrow" data-reveal="up">About the founder</div>
+      <h2 style="margin:18px 0 28px" data-slide="right">Dhiraj Kumar</h2>
+      <blockquote data-slide="right">“Effective communication is not merely about transmitting a message — it is about shaping perception, engineering trust, and driving measurable action at every tier of society.”</blockquote>
+      <p class="lead" style="margin-top:32px" data-reveal="up">A seasoned public communications advisor and strategist with over 8 years in campaign architecture, political strategy and corporate advisory. Before founding Biggsmash Outreach in 2022, Dhiraj worked with leading consultancy firms on high-stakes campaigns, policy rollouts and institutional perception strategy.</p>
     </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="sechead"><h2 data-slide="left">A multi-regional<br><em>power centre.</em></h2></div>
+    <div class="tiles light">
+      <article class="tile" data-flip data-i="0" style="background:var(--ink);color:var(--paper)"><div><small style="color:var(--signal)">Headquarters</small><h3 style="font-style:normal;color:var(--paper);font-size:56px">Patna</h3></div><p style="color:var(--line)">Ground Floor, Shobha Sadan, Harnichak, Anisabad, Patna-800002, Bihar</p></article>
+      <article class="tile" data-flip data-i="1"><div><small>Northeast Regional Hub</small><h3 style="font-style:normal;color:var(--ink);font-size:56px">Agartala</h3></div><p>Near Palace Compound, Opposite ICFAI University Office, Agartala-799001, Tripura</p></article>
+      <article class="tile" data-flip data-i="2"><div><small>NCR Regional Hub</small><h3 style="font-style:normal;color:var(--ink);font-size:56px">Gurugram</h3></div><p>568B, Sector 39, Near Unitech Cyber Park, Gurugram-122003, Haryana</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Let’s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>→</span></a>
+  </div>
 </section>
 {% endblock %}

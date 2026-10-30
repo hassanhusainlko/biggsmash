@@ -1,32 +1,31 @@
-{% extends 'base.html' %}
+﻿{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{ post.title }} - Biggsmash Outreach{% endblock %}
+{% block title %}{{ post.title }} â€” Biggsmash Outreach{% endblock %}
+{% block description %}{{ post.excerpt }}{% endblock %}
 
 {% block content %}
-<section class="blog-detail">
-    <div class="container">
-        <div class="blog-header">
-            <h1>{{ post.title }}</h1>
-            <div class="meta">
-                <span class="author">{{ post.author }}</span> | 
-                <span>{{ post.publish_date|date:"F d, Y" }}</span>
-            </div>
-        </div>
+<section class="pagehero" style="min-height:64svh">
+  <div class="blob f" data-parallax="-0.4" style="width:380px;height:380px;right:10%;top:22%"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">{{ post.publish_date|date:"M d, Y" }} Â· {{ post.author }}</div>
+    <h1 style="margin-top:26px;font-size:clamp(38px,7.4vw,112px)"><span class="mask"><span>{{ post.title }}</span></span></h1>
+    <p class="lead" data-reveal="up" data-i="3">{{ post.excerpt }}</p>
+  </div>
+</section>
 
-        {% if post.featured_image %}
-        <div style="max-width: 800px; margin: 0 auto 40px;">
-            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" style="width: 100%; border-radius: 12px;">
-        </div>
-        {% endif %}
+<section class="pad" style="padding-top:0">
+  <article class="wrap prose">
+    {{ post.content|linebreaks }}
+    <p data-reveal="up"><a class="btn ghost" href="{% url 'blog_list' %}">â† Back to the blog</a></p>
+  </article>
+</section>
 
-        <div class="blog-body">
-            {{ post.content|safe }}
-        </div>
-
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="{% url 'blog_list' %}" class="btn-secondary">← Back to Blogs</a>
-        </div>
-    </div>
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Letâ€™s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>â†’</span></a>
+  </div>
 </section>
 {% endblock %}

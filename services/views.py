@@ -6,6 +6,9 @@ def services_list(request):
     services = get_all_services()
     return render(request, 'services/index.html', {'services': services})
 
+def events(request):
+    return render(request, 'events/index.html')
+
 def service_detail(request, slug):
     service = get_service(slug)
     if not service:

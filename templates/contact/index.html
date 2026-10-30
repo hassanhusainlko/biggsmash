@@ -1,134 +1,48 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Contact Us - Biggsmash Outreach{% endblock %}
+{% block title %}Contact — Biggsmash Outreach{% endblock %}
+{% block description %}Contact Biggsmash Outreach — Patna, Agartala and Gurugram.{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <div class="container">
-        <h1>Contact Us</h1>
-        <p>Get in touch with our team for inquiries and collaborations</p>
+<section class="pagehero" style="min-height:60svh">
+  <div class="blob f" data-parallax="-0.4" style="width:380px;height:380px;right:10%;top:22%"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">Contact &amp; support</div>
+    <h1 style="margin-top:26px"><span class="mask"><span>Your vision.</span></span><span class="mask"><span style="--i:1">Our <em>expertise.</em></span></span></h1>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap cgrid">
+    <div>
+      <p class="lead" style="margin-bottom:40px" data-slide="left">One powerful partnership for individuals, government &amp; public institutions, and businesses &amp; brands. Planning something big? Let’s build your story, amplify your message and create impact together.</p>
+      <div class="det">
+        <div data-reveal="right" data-i="0"><span>Mobile</span><b>8787471137</b></div>
+        <div data-reveal="right" data-i="1"><span>Email</span><b>dhirajkumar@biggsmashoutreach.com</b></div>
+        <div data-reveal="right" data-i="2"><span>Email II</span><b>biggsmashoutreachopcpvt.ltd@gmail.com</b></div>
+        <div data-reveal="right" data-i="3"><span>Hours</span><b>Monday – Saturday · 09:00 AM – 07:00 PM IST</b></div>
+      </div>
     </div>
-</div>
+    <form data-demo data-slide="right">
+      <h3>Start a project</h3>
+      <label>Your name<input placeholder="Full name"></label>
+      <label>Email or mobile<input placeholder="you@organisation.com"></label>
+      <label>I am a<span class="chips"><button type="button">Individual</button><button type="button">Business</button><button type="button">Government</button></span></label>
+      <label>What are you planning?<textarea rows="4" placeholder="Tell us about your campaign, event or brand…"></textarea></label>
+      <button class="btn" type="submit">Send message <span>→</span></button>
+    </form>
+  </div>
+</section>
 
-<section class="section">
-    <div class="container">
-        <div class="contact-grid">
-            <div class="contact-form">
-                <h2>Send Us a Message</h2>
-                
-                {% if messages %}
-                {% for message in messages %}
-                <div style="padding: 12px 16px; background: #D1FAE5; color: #065F46; border-radius: 8px; margin-bottom: 20px;">
-                    {{ message }}
-                </div>
-                {% endfor %}
-                {% endif %}
-
-                <form method="POST">
-                    {% csrf_token %}
-                    
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        {{ form.name }}
-                        {% if form.name.errors %}
-                        <span style="color: #DC2626; font-size: 13px;">{{ form.name.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        {{ form.email }}
-                        {% if form.email.errors %}
-                        <span style="color: #DC2626; font-size: 13px;">{{ form.email.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        {{ form.phone }}
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        {{ form.subject }}
-                        {% if form.subject.errors %}
-                        <span style="color: #DC2626; font-size: 13px;">{{ form.subject.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        {{ form.message }}
-                        {% if form.message.errors %}
-                        <span style="color: #DC2626; font-size: 13px;">{{ form.message.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
-
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-
-                <div class="contact-info-item">
-                    <div class="icon">📱</div>
-                    <div>
-                        <h4>Mobile No</h4>
-                        <p><a href="tel:+918787471137">8787471137</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <div class="icon">📧</div>
-                    <div>
-                        <h4>Email</h4>
-                        <p><a href="mailto:biggsmashoutreachopcpvt.ltd@gmail.com">biggsmashoutreachopcpvt.ltd@gmail.com</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <div class="icon">🕒</div>
-                    <div>
-                        <h4>Working Hours</h4>
-                        <p>Monday – Saturday | 09:00 AM – 07:00 PM IST</p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <div class="icon">🏢</div>
-                    <div>
-                        <h4>Registered Office</h4>
-                        <p>Ground Floor, Shobha Sadan, Harnichak, Anisabad, Patna-800002, Bihar</p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <div class="icon">📍</div>
-                    <div>
-                        <h4>Regional Office (NorthEast)</h4>
-                        <p>Near Palace Compound, Opposite ICFAI University Office, Agartala-799001, Tripura</p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <div class="icon">📍</div>
-                    <div>
-                        <h4>Regional Office (NCR)</h4>
-                        <p>568B, Sector 39, Near Unitech Cyber Park, Gurugram-122003, Haryana</p>
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
-                    <div class="icon">🧾</div>
-                    <div>
-                        <h4>GST Number</h4>
-                        <p>10AALCB1428M1ZU</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="dark pad">
+  <div class="wrap">
+    <div class="sechead"><h2 data-slide="left">Three hubs.<br><em>One team.</em></h2></div>
+    <div class="tiles">
+      <article class="tile" data-flip data-i="0"><small style="color:var(--signal)">Registered office</small><h3 style="font-style:normal;color:var(--paper)">Patna</h3><p>Ground Floor, Shobha Sadan, Harnichak, Anisabad, Patna-800002, Bihar</p></article>
+      <article class="tile" data-flip data-i="1"><small>Regional office (Northeast)</small><h3 style="font-style:normal;color:var(--paper)">Agartala</h3><p>Near Palace Compound, Opposite ICFAI University Office, Agartala-799001, Tripura</p></article>
+      <article class="tile" data-flip data-i="2"><small>Regional office (NCR)</small><h3 style="font-style:normal;color:var(--paper)">Gurugram</h3><p>568B, Sector 39, Near Unitech Cyber Park, Gurugram-122003, Haryana</p></article>
     </div>
+  </div>
 </section>
 {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Events — Biggsmash Outreach{% endblock %}
+{% block description %}Large-scale event management and experiential production.{% endblock %}
+
+{% block content %}
+<section class="pagehero">
+  <div class="blob o" data-parallax="0.5" style="width:700px;height:700px;right:-240px;top:0"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">Large-scale event management &amp; experiential production</div>
+    <h1 style="margin-top:26px"><span class="mask"><span>Big ideas deserve</span></span><span class="mask"><span style="--i:1"><em>bigger stages.</em></span></span></h1>
+    <p class="lead" data-reveal="up" data-i="3">Biggsmash Outreach delivers end-to-end event management — transforming ideas into seamless, professionally executed experiences, from conceptualisation and planning to on-ground execution.</p>
+    <p style="margin-top:34px" data-reveal="up" data-i="4"><a class="btn" href="{% url 'contact' %}">Plan an event <span>→</span></a></p>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="offers">
+      <article class="offer d" data-flip data-i="0"><small>01</small><div><h3>Public &amp; Government Events</h3><p>Rallies, welfare launches, state-level summits, town halls and citizen awareness conventions — coordinated for seamless operations and real public engagement.</p></div></article>
+      <article class="offer" data-flip data-i="1"><small>02</small><div><h3>Corporate &amp; Business Events</h3><p>Annual summits, product launches, global partner meets, stakeholder roundtables and industry expos designed to elevate brand presence.</p></div></article>
+      <article class="offer" data-flip data-i="2"><small>03</small><div><h3>Protocol, VVIP &amp; Logistics</h3><p>Venue planning, delegate registration, VVIP protocol, security liaisoning, logistics, stage and audiovisual infrastructure — precision at every level.</p></div></article>
+      <article class="offer s" data-flip data-i="3"><small>04</small><div><h3>Experiential On-Ground Activations</h3><p>Branded pavilions, interactive display zones, immersive activations, live-streaming and broadcast-ready stage productions.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="dark pad" style="overflow:hidden">
+  <div class="wrap"><p class="statement" data-words>Your vision. Our execution. Extraordinary experiences. Planning something big? Let’s create an experience that makes an impact.</p></div>
+</section>
+
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Let’s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>→</span></a>
+  </div>
+</section>
+{% endblock %}

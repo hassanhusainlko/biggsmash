@@ -1,77 +1,64 @@
-{% extends 'base.html' %}
+﻿{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Apply{% if job %} - {{ job.title }}{% endif %} - Biggsmash Outreach{% endblock %}
+{% block title %}Apply{% if job %} for {{ job.title }}{% endif %} â€” Biggsmash Outreach{% endblock %}
+{% block description %}Share your resume and apply to join Biggsmash Outreach.{% endblock %}
 
 {% block content %}
-<div class="page-header career-banner">
-    <div class="container">
-        <h1>{% if job %}Apply for {{ job.title }}{% else %}Apply With Us{% endif %}</h1>
-        <p>
-            {% if job %}
-            {{ job.department }} &middot; {{ job.location }} &middot; {{ job.job_type }}
-            {% else %}
-            Tell us a little about you and share your resume
-            {% endif %}
-        </p>
+<section class="pagehero" style="min-height:52svh">
+  <div class="blob f" data-parallax="-0.4" style="width:380px;height:380px;right:10%;top:22%"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">Careers at Biggsmash</div>
+    <h1 style="margin-top:26px;font-size:clamp(38px,7.4vw,112px)"><span class="mask"><span>{% if job %}Apply for {{ job.title }}{% else %}Apply with us{% endif %}</span></span></h1>
+    <p class="lead" data-reveal="up" data-i="3">Tell us a little about you and share your resume.</p>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap cgrid">
+    <div>
+      <p class="lead" style="margin-bottom:40px" data-slide="left">Join a team where strategy, creative and outreach work together. We review every application we receive.</p>
+      {% if job %}
+      <div class="det">
+        <div><span>Role</span><b>{{ job.title }}</b></div>
+        <div><span>Department</span><b>{{ job.department }}</b></div>
+        <div><span>Location</span><b>{{ job.location }}</b></div>
+        <div><span>Type</span><b>{{ job.job_type }}</b></div>
+      </div>
+      {% endif %}
+      <p style="margin-top:34px"><a class="btn ghost" href="{% url 'career' %}">â† Back to all openings</a></p>
     </div>
-</div>
 
-<section class="section">
-    <div class="container">
-        <div class="job-apply-wrap">
-            {% if messages %}
-            {% for message in messages %}
-            <div class="form-alert">{{ message }}</div>
-            {% endfor %}
-            {% endif %}
+    <form method="POST" enctype="multipart/form-data" data-slide="right">
+      {% csrf_token %}
+      <h3>Job application</h3>
 
-            <div class="job-apply-card">
-                <h2>Job Application</h2>
+      <label for="{{ form.name.id_for_label }}">Full name *
+        {{ form.name }}
+        {% if form.name.errors %}<span style="color:var(--signal);font-size:13px;letter-spacing:0;text-transform:none">{{ form.name.errors.0 }}</span>{% endif %}
+      </label>
 
-                {% if job %}
-                <div class="applying-for">
-                    <span>Applying For</span>
-                    <strong>{{ job.title }}</strong>
-                </div>
-                {% endif %}
+      <label for="{{ form.mobile.id_for_label }}">Mobile number *
+        {{ form.mobile }}
+        {% if form.mobile.errors %}<span style="color:var(--signal);font-size:13px;letter-spacing:0;text-transform:none">{{ form.mobile.errors.0 }}</span>{% endif %}
+      </label>
 
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
+      <label for="{{ form.resume.id_for_label }}">Resume *
+        {{ form.resume }}
+        <span style="font-size:12px;letter-spacing:0;text-transform:none;color:var(--muted)">Accepted formats: PDF, DOC, DOCX. Max size 5 MB.</span>
+        {% if form.resume.errors %}<span style="color:var(--signal);font-size:13px;letter-spacing:0;text-transform:none">{{ form.resume.errors.0 }}</span>{% endif %}
+      </label>
 
-                    <div class="form-group">
-                        <label for="{{ form.name.id_for_label }}">Full Name *</label>
-                        {{ form.name }}
-                        {% if form.name.errors %}
-                        <span class="field-error">{{ form.name.errors.0 }}</span>
-                        {% endif %}
-                    </div>
+      <button class="btn" type="submit">Submit application <span>â†’</span></button>
+    </form>
+  </div>
+</section>
 
-                    <div class="form-group">
-                        <label for="{{ form.mobile.id_for_label }}">Mobile Number *</label>
-                        {{ form.mobile }}
-                        {% if form.mobile.errors %}
-                        <span class="field-error">{{ form.mobile.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <div class="form-group">
-                        <label for="{{ form.resume.id_for_label }}">Resume *</label>
-                        {{ form.resume }}
-                        <span class="field-hint">Accepted formats: PDF, DOC, DOCX. Max size 5 MB.</span>
-                        {% if form.resume.errors %}
-                        <span class="field-error">{{ form.resume.errors.0 }}</span>
-                        {% endif %}
-                    </div>
-
-                    <button type="submit" class="btn-primary" style="width: 100%;">Submit Application</button>
-                </form>
-            </div>
-
-            <p class="apply-back">
-                <a href="{% url 'career' %}">&larr; Back to all openings</a>
-            </p>
-        </div>
-    </div>
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Letâ€™s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>â†’</span></a>
+  </div>
 </section>
 {% endblock %}

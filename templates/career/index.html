@@ -1,63 +1,62 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Career - Biggsmash Outreach{% endblock %}
+{% block title %}Careers — Biggsmash Outreach{% endblock %}
+{% block description %}Join a single-window communications agency — curiosity, craft and local understanding.{% endblock %}
 
 {% block content %}
-<div class="page-header career-banner">
-    <div class="container">
-        <h1>Career at Biggsmash Outreach</h1>
-        <p>Join our team and help shape the future of digital communication</p>
-    </div>
-</div>
-
-<section class="section">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-block" style="margin-bottom: 40px;">
-                <h2>Why Work With Us?</h2>
-                <p>At Biggsmash Outreach, we believe in nurturing talent and providing opportunities for professional growth. Join a team of passionate professionals who are making a real difference in how government bodies communicate with citizens.</p>
-                <p>We offer a dynamic work environment, competitive compensation, and the opportunity to work on challenging projects that have a meaningful impact on society.</p>
-            </div>
-        </div>
-
-        {% if messages %}
-        {% for message in messages %}
-        <div class="form-alert">{{ message }}</div>
-        {% endfor %}
-        {% endif %}
-
-        {% if jobs %}
-        <div class="career-grid">
-            {% for job in jobs %}
-            <div class="career-card">
-                <div class="job-header">
-                    <h3>{{ job.title }}</h3>
-                    <span class="job-type">{{ job.job_type }}</span>
-                </div>
-                <div class="job-meta">
-                    <span><i class="fas fa-building"></i> {{ job.department }}</span>
-                    <span><i class="fas fa-map-marker-alt"></i> {{ job.location }}</span>
-                </div>
-                <p class="description">{{ job.description|truncatewords:30 }}</p>
-                <a href="{% url 'career_apply_job' job.id %}" class="btn-apply">Apply Now</a>
-            </div>
-            {% endfor %}
-        </div>
-        {% else %}
-        <div class="empty-state">
-            <h3>No Current Openings</h3>
-            <p>We're always looking for talented individuals. Send your resume to <strong>biggsmashoutreachopcpvt.ltd@gmail.com</strong> and we'll keep you in mind for future opportunities.</p>
-        </div>
-        {% endif %}
-    </div>
+<section class="pagehero">
+  <div class="blob o" data-parallax="0.5" style="width:640px;height:640px;right:-200px;top:6%"></div>
+  <div class="blob f" data-parallax="-0.4" style="width:380px;height:380px;right:12%;top:30%"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">Careers at Biggsmash</div>
+    <h1 style="margin-top:26px"><span class="mask"><span>Bring your</span></span><span class="mask"><span style="--i:1"><em>perspective.</em></span></span></h1>
+    <p class="lead" data-reveal="up" data-i="3">Curiosity, craft and local understanding all have a place in connected communications.</p>
+  </div>
 </section>
 
-<section class="cta-section section-blue">
-    <div class="container">
-        <h2>Don't See Your Role?</h2>
-        <p>We're always open to talented individuals. Apply with us and tell us how you can contribute to our mission.</p>
-        <a href="{% url 'career_apply' %}" class="btn-primary">Apply With Us</a>
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sechead"><h2 data-slide="left">Find your place<br>in the <em>conversation.</em></h2><p class="lead" data-reveal="up">Current opportunities at Biggsmash Outreach.</p></div>
+
+    {% if messages %}
+    <div style="margin-bottom:36px">
+      {% for message in messages %}
+      <p class="lead" style="color:var(--signal);font-weight:500">{{ message }}</p>
+      {% endfor %}
     </div>
+    {% endif %}
+
+    <div class="jobs">
+    {% for job in jobs %}
+    <details class="job" data-slide="{% cycle 'right' 'left' %}">
+      <summary><span class="n">{{ forloop.counter|stringformat:"02d" }}</span><div><h3>{{ job.title }}</h3><p class="meta">{{ job.location }} · {{ job.job_type }}</p></div><span class="go">+</span></summary>
+      <div class="jbody"><p>{{ job.description|linebreaksbr }}</p><p class="skills">{{ job.requirements|linebreaksbr }}</p><a class="btn" href="{% url 'career_apply_job' job.id %}">Ask about this role <span>→</span></a></div>
+    </details>
+    {% empty %}
+    <div class="job">
+      <div class="jbody" style="padding:36px 0;max-width:none">
+        <h3>No current openings</h3>
+        <p>We are always open to talented people. Send us your resume and tell us how you can contribute.</p>
+        <a class="btn" href="{% url 'career_apply' %}">Apply with us <span>→</span></a>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="dark pad" style="overflow:hidden">
+  <div class="blob o" data-parallax="0.5" style="width:600px;height:600px;right:-200px;top:-100px"></div>
+  <div class="wrap"><div class="eyebrow" data-reveal="up" style="margin-bottom:36px">Life at Biggsmash</div>
+  <p class="statement" data-words>Strategy, creative and outreach under one roof. Hubs in Patna, Agartala and Gurugram. Small teams, real responsibility and work that reaches people.</p></div>
+</section>
+
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Let’s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>→</span></a>
+  </div>
 </section>
 {% endblock %}

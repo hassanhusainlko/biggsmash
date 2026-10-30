@@ -1,293 +1,128 @@
-{% extends 'base.html' %} {% load static %} {% block title %}Biggsmash Outreach
-- Strategy-Driven Digital Communication{% endblock %} {% block content %}
-<!-- Hero Section -->
+{% extends 'base.html' %}
+{% load static %}
 
-<section class="hero">
-  <div class="hero-container">
-    <!-- Left: Hero Content -->
-    <div class="hero-content">
-      <span class="hero-badge">
-        <span class="badge-dot"></span>
-        Strategy. Creativity. Impact.
-      </span>
+{% block title %}Biggsmash Outreach — One agency. 360° solution.{% endblock %}
+{% block description %}Strategic branding, marketing and multi-channel communication for individuals, government institutions and businesses since 2022.{% endblock %}
+{% block body_class %}dark-hero{% endblock %}
 
-      <h1>
-        The Complete 360°
-        <span>Strategy-Driven, Data-Centric</span>
-        Integrated Communication &amp; Outreach
-      </h1>
+{% block intro %}
+<div id="intro"><div class="intro-stage"><video src="{% static 'assets/Biggsmash_LOGO.mp4' %}" muted playsinline preload="auto"></video></div><button type="button" class="intro-skip">Skip intro</button></div>
+<script>if(matchMedia('(prefers-reduced-motion: reduce)').matches){document.getElementById('intro').remove()}else{document.documentElement.classList.add('intro-on')}</script>
+{% endblock %}
 
-      <p class="hero-description">
-        Empowering Individuals, Government & Public Institutions, and Commercial
-        Businesses Since 2022
-      </p>
-
-      <div class="hero-actions">
-        <a href="{% url 'contact' %}" class="btn-primary">
-          Let's Work Together
-          <span class="btn-arrow">&rarr;</span>
-        </a>
-
-        <a href="#services" class="btn-hero-outline"> Explore Our Services </a>
+{% block content %}
+<!-- 01 HERO — full-bleed photo slides, masked uppercase headline, slide pills -->
+<section class="hero2" aria-label="Biggsmash Outreach">
+  <div class="slides" data-parallax="0.18">
+    <div class="slide on" role="img" aria-label="Illustrative strategy meeting around a planning table" style="background-image:url({% static 'assets/img/strategy-meeting.png' %});background-position:center 40%"></div>
+    <div class="slide" role="img" aria-label="Patna market, headquarters city" style="background-image:url({% static 'assets/img/patna.jpg' %});background-position:center 45%"></div>
+    <div class="slide" role="img" aria-label="Ujjayanta Palace, Agartala" style="background-image:url({% static 'assets/img/agartala.jpg' %});background-position:center 55%"></div>
+    <div class="slide" role="img" aria-label="Gurugram skyline at night" style="background-image:url({% static 'assets/img/gurugram.jpg' %});background-position:center 60%"></div>
+  </div>
+  <div class="shade"></div>
+  <div class="wrap hero2-in">
+    <div class="hero2-copy">
+      <div class="eyebrow" data-reveal="up">Empowering individuals · government · business — since 2022</div>
+      <h1 class="uc hl"><span class="mask"><span>Be heard.</span></span><span class="mask"><span style="--i:1">Make impact<b>.</b></span></span></h1>
+      <p class="hero2-sub" data-reveal="up" data-i="3">One agency. <em>360°</em> solution.<br>Strategy · Creativity · Communication · Execution</p>
+      <div class="cta" data-reveal="up" data-i="4"><a class="btn" href="{% url 'contact' %}">Talk to our team <span>→</span></a><a class="btn ghost" href="{% url 'services_list' %}">Explore services <span>→</span></a></div>
+      <div class="slidebtns" role="group" aria-label="Hero slides" data-reveal="up" data-i="5">
+        <button type="button" aria-pressed="true">Planning table</button>
+        <button type="button" aria-pressed="false">Patna</button>
+        <button type="button" aria-pressed="false">Agartala</button>
+        <button type="button" aria-pressed="false">Gurugram</button>
       </div>
     </div>
-
-    <!-- Right: Visual Element -->
-    <div class="hero-visual">
-      <div class="hero-image-wrapper">
-        <img
-          src="{% static 'images/hero-chess.jpg' %}"
-          alt="Strategic thinking and purposeful communication"
-          class="hero-image"
-        />
-
-        <div class="hero-image-overlay"></div>
-
-        <div class="hero-floating-card">
-          <span class="floating-icon">&#8599;</span>
-          <div>
-            <strong>360° Approach</strong>
-            <p>One vision. Multiple possibilities.</p>
-          </div>
-        </div>
-
-        <div class="hero-image-caption">
-          <span class="caption-line"></span>
-          <span>Ideas into action</span>
-        </div>
-      </div>
-
-      <div class="hero-orbit orbit-one"></div>
-      <div class="hero-orbit orbit-two"></div>
-    </div>
   </div>
-
-  <!-- Audience Strip -->
-  <div class="hero-bottom">
-    <span class="hero-bottom-label">WHO WE WORK WITH</span>
-
-    <div class="hero-audience">
-      <span>Businesses</span>
-      <span>Government & Public Institutions</span>
-      <span>Individuals & Organizations</span>
-    </div>
-
-    <span class="hero-since">EST. 2022</span>
-  </div>
+  <div class="hero2-foot"><span>Patna · Agartala · Gurugram</span><a href="#orbit" class="cue">Scroll <i></i></a></div>
 </section>
 
-<!-- About Section -->
-<section class="section about-section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <h3>About Biggsmash Outreach</h3>
-        <p>
-          Biggsmash Outreach (OPC) Pvt. Ltd. provides complete end-to-end
-          strategic branding, marketing, and multi-channel communication
-          services. From high-level perception management down to ground-level
-          execution, we offer unified, turnkey solutions designed to scale
-          Individuals, Government & Public Institutions, and Commercial
-          Businesses.
-        </p>
-        <p>
-          Biggsmash Outreach operates as a single-window strategic agency,
-          eliminating the friction of multi-vendor execution. From high-level
-          policy strategy and data analytics down to on-ground field activation,
-          digital infrastructure, and live call-center operations, every
-          communication lever is managed under one roof.
-        </p>
-        <a href="{% url 'about' %}" class="btn-primary mt-20">Learn More</a>
+<!-- 01b ORBIT — the 360° system, revolving with scroll -->
+<section class="pad orbit-sec" id="orbit">
+  <div class="wrap grid2">
+    <div>
+      <div class="eyebrow" data-reveal="up">The 360° system</div>
+      <h2 style="margin-top:18px"><span class="mask"><span>Every lever,</span></span><span class="mask"><span style="--i:1">one <em>orbit.</em></span></span></h2>
+      <p class="lead" style="margin-top:28px" data-reveal="up" data-i="3">Strategy, media, events, digital and ground outreach move together — planned in one room, delivered by one accountable team.</p>
+    </div>
+    <div class="orbit" data-reveal="zoom">
+      <i class="ring" style="width:36%;aspect-ratio:1"></i><i class="ring" style="width:73%;aspect-ratio:1"></i><i class="ring" style="width:104%;aspect-ratio:1"></i>
+      <div class="spin" data-spin="1" data-scope="page">
+        <span class="pill" style="left:8%;top:14%" data-counter-spin>Strategy</span>
+        <span class="pill" style="left:58%;top:30%" data-counter-spin>Media &amp; Events</span>
+        <span class="pill" style="left:6%;top:70%" data-counter-spin>Digital</span>
+        <span class="pill sig" style="left:48%;top:83%" data-counter-spin>Ground &amp; Direct</span>
+        <i class="dot" style="left:50%;top:19%"></i><i class="dot" style="left:83%;top:51%"></i><i class="dot" style="left:19%;top:55%"></i><i class="dot" style="left:63%;top:78%"></i>
       </div>
-      <div class="about-image">
-        <img
-          src="{% static 'images/about-section.avif' %}"
-          alt="About Biggsmash Outreach"
-          style="
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
-          "
-        />
-      </div>
+      <div class="core">360°</div>
     </div>
   </div>
 </section>
 
-<!-- Why Biggsmash Section -->
-<section class="section section-blue why-section">
-  <div class="container">
-    <h2 class="section-title">Why Biggsmash Outreach?</h2>
-    <p class="section-subtitle">
-      Whether you are an Individual public leader, a Growing Business, or a
-      Government Institution, effective communication requires moving beyond
-      fragmented vendors and generic agencies. Biggsmash Outreach (OPC) Pvt.
-      Ltd. operates as a single-window strategic agency that adapts its 360°
-      ecosystem&mdash;combining strategy, data, media, events, and direct
-      outreach&mdash;to solve the exact challenges faced by each client tier.
-    </p>
+<!-- 02 MARQUEE — two rows drift in opposite directions as you scroll -->
+<section class="marq" aria-hidden="true">
+  <div data-drift="-900">Strategy <i>✺</i> <em>Events</em> <i>✺</i> Media <i>✺</i> <em>Ground</em> <i>✺</i> Digital <i>✺</i> <em>Tele-outreach</em> <i>✺</i> Strategy <i>✺</i> <em>Events</em> <i>✺</i> Media</div>
+  <div data-drift="900" style="margin-left:-800px"><em>Perception</em> <i>✺</i> Campaigns <i>✺</i> <em>Sentiment</em> <i>✺</i> Reputation <i>✺</i> <em>Outreach</em> <i>✺</i> Activation <i>✺</i> <em>Perception</em> <i>✺</i> Campaigns</div>
+</section>
 
-    <div class="why-grid">
-      <article class="tier-card">
-        <div class="tier-head">
-          <span class="tier-icon">👤</span>
-          <div>
-            <span class="tier-label">Individuals</span>
-            <h3>Political Leaders, Public Figures &amp; Executives</h3>
-          </div>
-        </div>
+<!-- 03 SERVICES — pinned: vertical scroll drives the cards sideways -->
+<section class="hscroll">
+  <div class="hpin">
+    <div class="hhead">
+      <div><div class="eyebrow" style="color:var(--signal)">What we do</div><h2 style="margin-top:14px">Six levers.<br><em>One roof.</em></h2></div>
+      <p>A single-window agency that removes the friction of multi-vendor execution — from policy strategy and analytics to field activation, digital infrastructure and live call-centre operations.</p>
+    </div>
+    <div class="htrack">
+      <a class="hcard" href="{% url 'services_list' %}"><div class="n">01 <b>↗</b></div><div><h3>Strategic Advisory &amp; Perception Intelligence</h3><p>Campaign strategy, sentiment analysis, crisis and reputation management.</p></div></a>
+      <a class="hcard" href="{% url 'events' %}"><div class="n">02 <b>↗</b></div><div><h3>Event Management &amp; Experiential Production</h3><p>Rallies, summits, expos and VVIP protocol — big ideas on bigger stages.</p></div></a>
+      <a class="hcard" href="{% url 'services_list' %}"><div class="n">03 <b>↗</b></div><div><h3>Mass Media &amp; ATL Advertising</h3><p>Print, television, radio and PR that put your story in the spotlight.</p></div></a>
+      <a class="hcard" href="{% url 'services_list' %}"><div class="n">04 <b>↗</b></div><div><h3>On-Ground &amp; BTL Activations</h3><p>OOH branding, LED vans, Nukkad Natak and grassroots outreach drives.</p></div></a>
+      <a class="hcard" href="{% url 'services_list' %}"><div class="n">05 <b>↗</b></div><div><h3>Digital Media, Creative Studio &amp; Web</h3><p>Social, campaign portals, performance marketing and brand identity.</p></div></a>
+      <a class="hcard" href="{% url 'services_list' %}"><div class="n">06 <b>↗</b></div><div><h3>Direct Tele-Outreach &amp; Tech Operations</h3><p>Call centre, WhatsApp automation, SMS and voice campaigns at scale.</p></div></a>
+    </div>
+    <div class="hprog"><i></i></div>
+  </div>
+</section>
 
-        <div class="tier-block tier-challenge">
-          <span class="tier-block-label">The Challenge</span>
-          <p>
-            Fragmented media presence, unmonitored public sentiment, lack of
-            direct constituent/audience contact, and vulnerability to sudden
-            narrative shifts.
-          </p>
-        </div>
+<!-- 04 STATEMENT — words light up with scroll -->
+<section class="dark pad" style="overflow:hidden">
+  <div class="blob o" data-parallax="0.6" style="width:700px;height:700px;right:-260px;top:-120px"></div>
+  <div class="wrap"><div class="eyebrow" data-reveal="up" style="margin-bottom:36px">Why Biggsmash</div>
+  <p class="statement" data-words>Every powerful idea deserves to be heard. Every message deserves to make an impact. One agency. One roof. 360° of strategy, media, events and direct outreach — under one accountable team.</p></div>
+</section>
 
-        <div class="tier-block tier-solution">
-          <span class="tier-block-label">Our Solution</span>
-          <p>
-            We engineer hyper-personalised personal branding and perception
-            strategies. From speechwriting, media placement, and viral digital
-            content to direct constituent outreach via call centers and
-            WhatsApp, we give leaders a reliable command center to build
-            enduring influence and navigate high-stakes moments.
-          </p>
-        </div>
-      </article>
-
-      <article class="tier-card">
-        <div class="tier-head">
-          <span class="tier-icon">🏢</span>
-          <div>
-            <span class="tier-label">Businesses &amp; Enterprises</span>
-            <h3>Corporations, Brands &amp; SMEs</h3>
-          </div>
-        </div>
-
-        <div class="tier-block tier-challenge">
-          <span class="tier-block-label">The Challenge</span>
-          <p>
-            High cost of multi-agency retainer models, fragmented ATL/BTL
-            execution, weak conversion tracking, and difficulty breaking into
-            regional/tier-2 &amp; tier-3 markets.
-          </p>
-        </div>
-
-        <div class="tier-block tier-solution">
-          <span class="tier-block-label">Our Solution</span>
-          <p>
-            We provide a single-roof marketing engine that drives measurable
-            revenue growth and brand visibility. By combining precision
-            performance ads, outdoor branding, high-impact corporate event
-            production, PR, and lead generation call centers, we accelerate
-            market expansion without vendor friction.
-          </p>
-        </div>
-      </article>
-
-      <article class="tier-card">
-        <div class="tier-head">
-          <span class="tier-icon">🏛️</span>
-          <div>
-            <span class="tier-label">Government &amp; Public Institutions</span>
-            <h3>Departments, PSUs &amp; Municipalities</h3>
-          </div>
-        </div>
-
-        <div class="tier-block tier-challenge">
-          <span class="tier-block-label">The Challenge</span>
-          <p>
-            Complex policy language failing to reach beneficiaries, low uptake
-            of welfare schemes, strict regulatory compliance demands, and
-            logistical hurdles in managing mega public events and mass field
-            drives.
-          </p>
-        </div>
-
-        <div class="tier-block tier-solution">
-          <span class="tier-block-label">Our Solution</span>
-          <p>
-            We specialise in institutional-grade policy translation,
-            multi-lingual communications, and large-scale public logistics. We
-            translate dense government directives into simple, culturally
-            relevant narratives deployed across national media, ground-level LED
-            vans, mass SMS/IVR broadcasts, and on-ground activations.
-          </p>
-        </div>
-      </article>
+<!-- 05 AUDIENCE — tiles revolve 360° as they scroll into view -->
+<section class="dark pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sechead"><div><div class="eyebrow">Who we serve</div><h2 style="margin-top:18px" data-slide="right">One ecosystem, tuned to<br>each kind of <em>leader.</em></h2></div></div>
+    <div class="tiles">
+      <article class="tile" data-flip data-i="0"><div><h3>For individuals</h3></div><span class="role">Political leaders, public figures &amp; executives</span><div><small>The challenge</small><p>Fragmented media presence, unmonitored sentiment and no direct line to constituents.</p></div><div><small>Why Biggsmash</small><p class="w">Hyper-personalised branding, speechwriting, media placement and a call-centre command centre.</p></div></article>
+      <article class="tile" data-flip data-i="1"><div><h3>For businesses</h3></div><span class="role">Corporations, brands &amp; SMEs</span><div><small>The challenge</small><p>High multi-agency retainers, patchy ATL/BTL execution and weak conversion tracking.</p></div><div><small>Why Biggsmash</small><p class="w">One marketing engine: performance ads, outdoor, events, PR and lead-gen call centres.</p></div></article>
+      <article class="tile" data-flip data-i="2"><div><h3>For government</h3></div><span class="role">Public institutions &amp; departments</span><div><small>The challenge</small><p>Reaching citizens across languages, districts and channels with trusted, consistent messaging.</p></div><div><small>Why Biggsmash</small><p class="w">Welfare launches, awareness conventions, grassroots drives and measured public engagement.</p></div></article>
     </div>
   </div>
 </section>
 
-<!-- Key Strategic Milestones -->
-<section class="section achievements-section">
-  <div class="container">
-    <h2 class="section-title">Key Strategic Milestones</h2>
-    <p class="section-subtitle">
-      From a unified, single-window communications agency to a pan-India,
-      full-spectrum outreach partner
-    </p>
-
-    <div class="milestones">
-      <div class="milestone">
-        <div class="milestone-year">2022</div>
-        <div class="milestone-card">
-          <p>
-            <strong>Founded Biggsmash Outreach (OPC) Pvt. Ltd.</strong> as a
-            unified, single-window communications agency.
-          </p>
-        </div>
-      </div>
-
-      <div class="milestone">
-        <div class="milestone-year">2023</div>
-        <div class="milestone-card">
-          <p>
-            <strong>Pan-India Expansion:</strong> Established operational hubs
-            in Patna, Agartala, and Gurugram to serve North (NCR), East, and
-            Northeast India.
-          </p>
-        </div>
-      </div>
-
-      <div class="milestone">
-        <div class="milestone-year">2024</div>
-        <div class="milestone-card">
-          <p>
-            <strong>Full-Spectrum Infrastructure:</strong> Integrated in-house
-            call centers, digital media teams, BTL field units, and large-scale
-            event production capabilities under one roof.
-          </p>
-        </div>
-      </div>
-
-      <div class="milestone">
-        <div class="milestone-year">2025</div>
-        <div class="milestone-card">
-          <p>
-            <strong>Multi-Sector Impact:</strong> Successfully executed
-            campaigns spanning public health awareness, youth skill missions,
-            corporate launches, and executive reputation management.
-          </p>
-        </div>
-      </div>
+<!-- 06 MILESTONES — timeline line draws; years slide in from the right -->
+<section class="pad">
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">Key milestones</div>
+    <div class="tl" style="margin-top:56px">
+      <i class="bar" data-grow></i>
+      <div data-slide="right"><b>2022</b><p>Founded as a unified, single-window communications agency.</p></div>
+      <div data-slide="right"><b>2023</b><p>Pan-India expansion: hubs in Patna, Agartala and Gurugram.</p></div>
+      <div data-slide="right"><b>2024</b><p>In-house call centres, digital, BTL and event production under one roof.</p></div>
+      <div data-slide="right"><b>2025</b><p>Public health, youth skill missions, corporate launches and reputation management.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section section-blue">
-  <div class="container">
-    <h2>Ready to Make an Impact?</h2>
-    <p>
-      Let's discuss how Biggsmash Outreach can help your institution connect
-      with citizens more effectively.
-    </p>
-    <a href="{% url 'contact' %}" class="btn-primary">Get in Touch</a>
+<!-- 07 CTA — oversized type drifts behind -->
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Let’s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>→</span></a>
   </div>
 </section>
 {% endblock %}

@@ -1,47 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Blogs - Biggsmash Outreach{% endblock %}
+{% block title %}Blog — Biggsmash Outreach{% endblock %}
+{% block description %}Notes on strategy, communication and the conversations that bring people closer.{% endblock %}
 
 {% block content %}
-<div class="page-header blog-banner">
-    <div class="container">
-        <h1>Our Blog</h1>
-        <p>Insights, updates, and thought leadership from Biggsmash Outreach</p>
-    </div>
-</div>
+<section class="pagehero">
+  <div class="blob o" data-parallax="0.5" style="width:640px;height:640px;right:-200px;top:6%"></div>
+  <div class="blob f" data-parallax="-0.4" style="width:380px;height:380px;right:12%;top:30%"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">The Biggsmash blog</div>
+    <h1 style="margin-top:26px"><span class="mask"><span>Ideas that</span></span><span class="mask"><span style="--i:1"><em>travel further.</em></span></span></h1>
+    <p class="lead" data-reveal="up" data-i="3">Notes on strategy, communication and the conversations that bring people closer.</p>
+  </div>
+</section>
 
-<section class="section">
-    <div class="container">
-        {% if posts %}
-        <div class="blog-grid">
-            {% for post in posts %}
-            <div class="blog-card">
-                <div class="blog-card-image">
-                    {% if post.featured_image %}
-                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover;">
-                    {% else %}
-                    📝
-                    {% endif %}
-                </div>
-                <div class="blog-card-content">
-                    <div class="meta">
-                        <span class="author">{{ post.author }}</span>
-                        <span>{{ post.publish_date|date:"M d, Y" }}</span>
-                    </div>
-                    <h3><a href="{% url 'blog_detail' post.slug %}">{{ post.title }}</a></h3>
-                    <p class="excerpt">{{ post.excerpt }}</p>
-                    <a href="{% url 'blog_detail' post.slug %}" class="read-more">Read More →</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% else %}
-        <div class="empty-state">
-            <h3>No blog posts yet</h3>
-            <p>Check back soon for the latest insights and updates from Biggsmash Outreach.</p>
-        </div>
-        {% endif %}
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sechead"><h2 data-slide="left">From our<br><em>notebook.</em></h2><p class="lead" data-reveal="up">Latest thinking from the Biggsmash team.</p></div>
+    <div class="posts">
+      {% for post in posts %}
+      <a class="post" href="{% url 'blog_detail' post.slug %}" data-flip data-i="{{ forloop.counter0 }}"><div><small>{{ post.publish_date|date:"M d, Y" }} · {{ post.author }}</small><h3>{{ post.title }}</h3><p>{{ post.excerpt }}</p></div><span class="more">Read the story <b>→</b></span></a>
+      {% empty %}
+      <div class="post" data-flip data-i="0"><div><small>Coming soon</small><h3>No stories yet</h3><p>We are working on our first notes. Check back soon for ideas on strategy, communication and outreach.</p></div></div>
+      {% endfor %}
     </div>
+  </div>
+</section>
+
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Let’s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>→</span></a>
+  </div>
 </section>
 {% endblock %}

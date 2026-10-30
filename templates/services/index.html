@@ -1,28 +1,40 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Our Services - Biggsmash Outreach{% endblock %}
+{% block title %}Services — Biggsmash Outreach{% endblock %}
+{% block description %}Six integrated communication services under one roof.{% endblock %}
 
 {% block content %}
-<div class="page-header services-banner">
-    <div class="container">
-        <h1>Our Services</h1>
-        <p>Six integrated verticals delivered as one single-window strategic partner</p>
-    </div>
-</div>
+<section class="pagehero">
+  <div class="blob f" data-parallax="-0.4" style="width:420px;height:420px;right:8%;top:20%"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">Services — the complete 360° strategy</div>
+    <h1 style="margin-top:26px"><span class="mask"><span>One agency.</span></span><span class="mask"><span style="--i:1">Six ways to <em>move people.</em></span></span></h1>
+    <p class="lead" data-reveal="up" data-i="3">Data-centric, integrated communication and outreach — from perception intelligence to ground-level execution — delivered by one accountable team.</p>
+  </div>
+</section>
 
-<section class="section">
-    <div class="container">
-        <div class="services-grid">
-            {% for slug, service in services.items %}
-            <div class="service-card">
-                <div class="icon">{{ service.icon }}</div>
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.summary }}</p>
-                <a href="{% url 'service_detail' slug %}" class="read-more">Learn More →</a>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <a class="srow" href="{% url 'contact' %}" data-slide="right"><span class="n">01</span><h3>Strategic Advisory &amp; Perception Intelligence</h3><p>Campaign strategy · Sentiment analysis · Crisis &amp; reputation · Perception mapping</p><span class="go">→</span></a>
+    <a class="srow" href="{% url 'events' %}" data-slide="left"><span class="n">02</span><h3>Event Management &amp; Experiential Production</h3><p>Public &amp; government events · Corporate summits · VVIP protocol · Brand activations</p><span class="go">→</span></a>
+    <a class="srow" href="{% url 'contact' %}" data-slide="right"><span class="n">03</span><h3>Mass Media &amp; ATL Advertising</h3><p>Print media &amp; PR · Television &amp; broadcast · National &amp; regional PR</p><span class="go">→</span></a>
+    <a class="srow" href="{% url 'contact' %}" data-slide="left"><span class="n">04</span><h3>On-Ground &amp; BTL Activations</h3><p>Outdoor branding · Field campaigns &amp; mobile vans · Grassroots outreach drives</p><span class="go">→</span></a>
+    <a class="srow" href="{% url 'contact' %}" data-slide="right"><span class="n">05</span><h3>Digital Media, Creative Studio &amp; Web</h3><p>Social media · Digital infrastructure · Performance marketing · Creative identity</p><span class="go">→</span></a>
+    <a class="srow" href="{% url 'contact' %}" data-slide="left"><span class="n">06</span><h3>Direct Tele-Outreach &amp; Tech Operations</h3><p>Dedicated call centre · WhatsApp automation · SMS &amp; voice campaigns</p><span class="go">→</span></a>
+  </div>
+</section>
+
+<section class="dark pad" style="overflow:hidden">
+  <div class="blob o" data-parallax="0.5" style="width:600px;height:600px;right:-200px;top:-100px"></div>
+  <div class="wrap"><p class="statement" data-words>Whether you are an individual public leader, a growing business or a government institution, effective communication means moving beyond fragmented vendors. One agency adapts its 360° ecosystem to solve your exact challenge.</p></div>
+</section>
+
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Let’s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>→</span></a>
+  </div>
 </section>
 {% endblock %}

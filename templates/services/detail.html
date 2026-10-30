@@ -1,40 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{{ service.title }} - Biggsmash Outreach{% endblock %}
+{% block title %}{{ service.title }} — Biggsmash Outreach{% endblock %}
+{% block description %}{{ service.summary }}{% endblock %}
 
 {% block content %}
-<div class="page-header services-banner">
-    <div class="container">
-        <h1>{{ service.icon }} {{ service.title }}</h1>
-        <p>Delivered as part of our 360° single-window communications ecosystem</p>
+<section class="pagehero">
+  <div class="blob o" data-parallax="0.5" style="width:700px;height:700px;right:-240px;top:0"></div>
+  <div class="wrap">
+    <div class="eyebrow" data-reveal="up">Service — the complete 360° strategy</div>
+    <h1 style="margin-top:26px"><span class="mask"><span>{{ service.title }}</span></span></h1>
+    <p class="lead" data-reveal="up" data-i="3">{{ service.summary }}</p>
+    <p style="margin-top:34px" data-reveal="up" data-i="4"><a class="btn" href="{% url 'contact' %}">Talk to our team <span>→</span></a></p>
+  </div>
+</section>
+
+{% if service.intro %}
+<section class="dark pad" style="overflow:hidden">
+  <div class="blob o" data-parallax="0.5" style="width:600px;height:600px;right:-200px;top:-100px"></div>
+  <div class="wrap"><p class="statement" data-words>{{ service.intro }}</p></div>
+</section>
+{% endif %}
+
+<section class="pad"{% if service.intro %} style="padding-top:0"{% endif %}>
+  <div class="wrap">
+    <div class="offers">
+      {% for item in service.items %}
+      <article class="offer {% cycle '' 'd' %}" data-flip data-i="{{ forloop.counter0 }}"><small>{{ forloop.counter|stringformat:"02d" }}</small><div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></div></article>
+      {% endfor %}
     </div>
-</div>
+    <p style="margin-top:48px"><a class="btn ghost" href="{% url 'services_list' %}">← All services</a></p>
+  </div>
+</section>
 
-<section class="section">
-    <div class="container">
-        <div class="service-detail">
-            {% if service.intro %}
-            <div class="content">
-                <p>{{ service.intro }}</p>
-            </div>
-            {% endif %}
-
-            <div class="service-items">
-                {% for item in service.items %}
-                <div class="service-item">
-                    <h4>{{ item.title }}</h4>
-                    <p>{{ item.text }}</p>
-                </div>
-                {% endfor %}
-            </div>
-
-            <div class="cta">
-                <h3>Ready to Get Started?</h3>
-                <p style="margin-bottom: 20px; color: var(--dark-gray);">Contact us today to discuss how we can help your organization with {{ service.title|lower }}.</p>
-                <a href="{% url 'contact' %}" class="btn-primary">Contact Us</a>
-            </div>
-        </div>
-    </div>
+<section class="band pad">
+  <span class="ghost" data-parallax="-0.5" style="translate:0 -50%">biggsmash</span>
+  <div class="wrap in-wrap">
+    <div><div class="eyebrow" data-reveal="up">Ready to make your next move count?</div><h2 style="margin-top:18px" data-reveal="right">Let’s build your story, amplify your message.</h2></div>
+    <a class="btn" href="{% url 'contact' %}" data-reveal="zoom">Connect today <span>→</span></a>
+  </div>
 </section>
 {% endblock %}
