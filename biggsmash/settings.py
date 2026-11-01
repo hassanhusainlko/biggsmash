@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
     host.strip()
     for host in os.getenv(
         "DJANGO_ALLOWED_HOSTS",
-        "127.0.0.1,localhost,hassan91.pythonanywhere.com,biggsmashoutreach.com,www.biggsmashoutreach.com",
+        "127.0.0.1,localhost,hassan91.pythonanywhere.com,biggsmashoutreach.com,www.biggsmashoutreach.com,169.58.1.150",
     ).split(",")
     if host.strip()
 ]
@@ -158,6 +158,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:8000/",
+    "http://169.58.1.150:8080",
     "https://hassan91.pythonanywhere.com/",
     "http://biggsmashoutreach.com",
     "https://biggsmashoutreach.com",
