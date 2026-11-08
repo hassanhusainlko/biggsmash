@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
     "core",
     "home",
     "services",
@@ -56,6 +58,10 @@ INSTALLED_APPS = [
     "career",
     "contact",
 ]
+
+SITE_ID = 1
+SITE_DOMAIN = os.getenv("DJANGO_SITE_DOMAIN", "biggsmashoutreach.com")
+SITE_NAME = os.getenv("DJANGO_SITE_NAME", "Biggsmash Outreach")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
