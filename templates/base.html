@@ -1,74 +1,200 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{% block title %}Biggsmash Outreach — One agency. 360° solution.{% endblock %}</title>
-<meta name="description" content="{% block description %}Strategic branding, marketing and multi-channel communication for individuals, government institutions and businesses since 2022.{% endblock %}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="{% static 'assets/favicon.svg' %}" type="image/svg+xml">
-<meta name="theme-color" content="#740230">
-<link rel="stylesheet" href="{% static 'assets/style.css' %}">
-{% block extra_head %}{% endblock %}
-</head>
-<body class="{% block body_class %}{% endblock %}">
-<div id="bar"></div>
-{% with u=request.resolver_match.url_name %}
-<header class="nav" id="nav">
-  <a class="logo" href="{% url 'home' %}" aria-label="Biggsmash Outreach — home"><img src="{% static 'assets/logo.jpg' %}" alt="Biggsmash Outreach Private Limited" width="1457" height="266"></a>
-  <nav class="links">
-    <a href="{% url 'home' %}" class="{% if u == 'home' %}on{% endif %}">Home</a>
-    <a href="{% url 'about' %}" class="{% if u == 'about' %}on{% endif %}">About</a>
-    <a href="{% url 'services_list' %}" class="{% if u == 'services_list' or u == 'service_detail' %}on{% endif %}">Services</a>
-    <a href="{% url 'events' %}" class="{% if u == 'events' %}on{% endif %}">Events</a>
-    <a href="{% url 'career' %}" class="{% if u == 'career' or u == 'career_apply' or u == 'career_apply_job' %}on{% endif %}">Careers</a>
-    <a href="{% url 'blog_list' %}" class="{% if u == 'blog_list' or u == 'blog_detail' %}on{% endif %}">Blog</a>
-  </nav>
-  <div class="nav-actions">
-    <a class="btn sm" href="{% url 'contact' %}">Start a project <span>→</span></a>
-    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      {% block title %}Biggsmash Outreach — One agency. 360° solution.{%
+      endblock %}
+    </title>
+    <meta
+      name="description"
+      content="{% block description %}Strategic branding, marketing and multi-channel communication for individuals, government institutions and businesses since 2022.{% endblock %}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="{% static 'assets/favicon.svg' %}"
+      type="image/svg+xml"
+    />
+    <meta name="theme-color" content="#740230" />
+    <meta
+      name="google-site-verification"
+      content="eL_YVvE9NPZVol8LV_iD4bg1BGWrXau5GWwGimI6GTk"
+    />
+    <link rel="stylesheet" href="{% static 'assets/style.css' %}" />
+    {% block extra_head %}{% endblock %}
+  </head>
+  <body class="{% block body_class %}{% endblock %}">
+    <div id="bar"></div>
+    {% with u=request.resolver_match.url_name %}
+    <header class="nav" id="nav">
+      <a
+        class="logo"
+        href="{% url 'home' %}"
+        aria-label="Biggsmash Outreach — home"
+        ><img
+          src="{% static 'assets/logo.jpg' %}"
+          alt="Biggsmash Outreach Private Limited"
+          width="1457"
+          height="266"
+      /></a>
+      <nav class="links">
+        <a href="{% url 'home' %}" class="{% if u == 'home' %}on{% endif %}"
+          >Home</a
+        >
+        <a href="{% url 'about' %}" class="{% if u == 'about' %}on{% endif %}"
+          >About</a
+        >
+        <a
+          href="{% url 'services_list' %}"
+          class="{% if u == 'services_list' or u == 'service_detail' %}on{% endif %}"
+          >Services</a
+        >
+        <a href="{% url 'events' %}" class="{% if u == 'events' %}on{% endif %}"
+          >Events</a
+        >
+        <a
+          href="{% url 'career' %}"
+          class="{% if u == 'career' or u == 'career_apply' or u == 'career_apply_job' %}on{% endif %}"
+          >Careers</a
+        >
+        <a
+          href="{% url 'blog_list' %}"
+          class="{% if u == 'blog_list' or u == 'blog_detail' %}on{% endif %}"
+          >Blog</a
+        >
+      </nav>
+      <div class="nav-actions">
+        <a class="btn sm" href="{% url 'contact' %}"
+          >Start a project <span>→</span></a
+        >
+        <button
+          type="button"
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+          aria-label="Open menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-<div class="mobile-nav" id="mobileNav" aria-hidden="true">
-  <div class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="Site menu">
-    <div class="mobile-nav-head">
-      <a class="logo" href="{% url 'home' %}" aria-label="Biggsmash Outreach — home"><img src="{% static 'assets/logo.jpg' %}" alt="Biggsmash Outreach Private Limited" width="1457" height="266"></a>
-      <button type="button" class="mobile-close" id="navClose" aria-label="Close menu">&times;</button>
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <div
+        class="mobile-nav-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site menu"
+      >
+        <div class="mobile-nav-head">
+          <a
+            class="logo"
+            href="{% url 'home' %}"
+            aria-label="Biggsmash Outreach — home"
+            ><img
+              src="{% static 'assets/logo.jpg' %}"
+              alt="Biggsmash Outreach Private Limited"
+              width="1457"
+              height="266"
+          /></a>
+          <button
+            type="button"
+            class="mobile-close"
+            id="navClose"
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
+        </div>
+        <nav>
+          <a href="{% url 'home' %}" class="{% if u == 'home' %}on{% endif %}"
+            >Home</a
+          >
+          <a href="{% url 'about' %}" class="{% if u == 'about' %}on{% endif %}"
+            >About</a
+          >
+          <a
+            href="{% url 'services_list' %}"
+            class="{% if u == 'services_list' or u == 'service_detail' %}on{% endif %}"
+            >Services</a
+          >
+          <a
+            href="{% url 'events' %}"
+            class="{% if u == 'events' %}on{% endif %}"
+            >Events</a
+          >
+          <a
+            href="{% url 'career' %}"
+            class="{% if u == 'career' or u == 'career_apply' or u == 'career_apply_job' %}on{% endif %}"
+            >Careers</a
+          >
+          <a
+            href="{% url 'blog_list' %}"
+            class="{% if u == 'blog_list' or u == 'blog_detail' %}on{% endif %}"
+            >Blog</a
+          >
+        </nav>
+        <a class="btn" href="{% url 'contact' %}"
+          >Start a project <span>→</span></a
+        >
+      </div>
     </div>
-    <nav>
-      <a href="{% url 'home' %}" class="{% if u == 'home' %}on{% endif %}">Home</a>
-      <a href="{% url 'about' %}" class="{% if u == 'about' %}on{% endif %}">About</a>
-      <a href="{% url 'services_list' %}" class="{% if u == 'services_list' or u == 'service_detail' %}on{% endif %}">Services</a>
-      <a href="{% url 'events' %}" class="{% if u == 'events' %}on{% endif %}">Events</a>
-      <a href="{% url 'career' %}" class="{% if u == 'career' or u == 'career_apply' or u == 'career_apply_job' %}on{% endif %}">Careers</a>
-      <a href="{% url 'blog_list' %}" class="{% if u == 'blog_list' or u == 'blog_detail' %}on{% endif %}">Blog</a>
-    </nav>
-    <a class="btn" href="{% url 'contact' %}">Start a project <span>→</span></a>
-  </div>
-</div>
-{% endwith %}
-<div id="dots"></div>
+    {% endwith %}
+    <div id="dots"></div>
 
-{% block intro %}{% endblock %}
+    {% block intro %}{% endblock %}
 
-<main>
-{% block content %}{% endblock %}
-</main>
+    <main>{% block content %}{% endblock %}</main>
 
-<footer>
-  <div class="cols">
-    <div><a class="flogo" href="{% url 'home' %}"><img src="{% static 'assets/logo.jpg' %}" alt="Biggsmash Outreach Private Limited" width="1457" height="266"></a><p>Strategy. Creativity. Communication. Execution.</p><p>Since 2022 — a single-window communications agency.</p></div>
-    <div><h4>Registered office</h4><p>Ground Floor, Shobha Sadan, Harnichak, Anisabad, Patna-800002, Bihar</p></div>
-    <div><h4>Regional hubs</h4><p>Agartala-799001, Tripura (Northeast)</p><p>Gurugram-122003, Haryana (NCR)</p></div>
-    <div><h4>Talk to us</h4><a href="tel:8787471137">8787471137</a><a href="mailto:dhirajkumar@biggsmashoutreach.com">dhirajkumar@biggsmashoutreach.com</a><p>Mon–Sat · 09:00–19:00 IST</p><a href="{% url 'contact' %}">Start a project →</a></div>
-  </div>
-  <p class="legal">© 2022–2026 Biggsmash Outreach (OPC) Pvt. Ltd. All rights reserved.</p>
-</footer>
+    <footer>
+      <div class="cols">
+        <div>
+          <a class="flogo" href="{% url 'home' %}"
+            ><img
+              src="{% static 'assets/logo.jpg' %}"
+              alt="Biggsmash Outreach Private Limited"
+              width="1457"
+              height="266"
+          /></a>
+          <p>Strategy. Creativity. Communication. Execution.</p>
+          <p>Since 2022 — a single-window communications agency.</p>
+        </div>
+        <div>
+          <h4>Registered office</h4>
+          <p>
+            Ground Floor, Shobha Sadan, Harnichak, Anisabad, Patna-800002, Bihar
+          </p>
+        </div>
+        <div>
+          <h4>Regional hubs</h4>
+          <p>Agartala-799001, Tripura (Northeast)</p>
+          <p>Gurugram-122003, Haryana (NCR)</p>
+        </div>
+        <div>
+          <h4>Talk to us</h4>
+          <a href="tel:8787471137">8787471137</a
+          ><a href="mailto:dhirajkumar@biggsmashoutreach.com"
+            >dhirajkumar@biggsmashoutreach.com</a
+          >
+          <p>Mon–Sat · 09:00–19:00 IST</p>
+          <a href="{% url 'contact' %}">Start a project →</a>
+        </div>
+      </div>
+      <p class="legal">
+        © 2022–2026 Biggsmash Outreach (OPC) Pvt. Ltd. All rights reserved.
+      </p>
+    </footer>
 
-<script src="{% static 'assets/main.js' %}"></script>
-{% block extra_js %}{% endblock %}
-</body>
+    <script src="{% static 'assets/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+  </body>
 </html>
