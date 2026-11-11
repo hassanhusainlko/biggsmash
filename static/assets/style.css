@@ -303,16 +303,15 @@ header.nav.stuck .logo img{height:40px}
 .hero2 .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 .hero2 .btn{background:var(--gold);border-color:var(--gold);color:#000}.hero2 .btn:hover{background:#fff;border-color:#fff;box-shadow:none}
 .hero2 .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}.hero2 .btn.ghost:hover{background:#fff;color:#000}
-.slidebtns{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-.slidebtns button{font:600 12px var(--sans);padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.4);color:#fff;cursor:pointer;backdrop-filter:blur(4px);transition:background .25s,color .25s,border-color .25s,transform .16s var(--out)}
-.slidebtns button:hover{background:rgba(255,255,255,.2)}
-.slidebtns button:active{transform:scale(.96)}
-.slidebtns button[aria-pressed=true]{background:#fff;color:#000;border-color:#fff}
+.slidebtns{display:flex;align-items:center;gap:4px;margin-top:22px}
+.slidebtns button{position:relative;width:38px;height:44px;padding:0;border:0;background:none;cursor:pointer}
+.slidebtns button::before{content:"";position:absolute;left:50%;top:50%;translate:-50% -50%;width:22px;height:2px;border-radius:2px;background:rgba(255,255,255,.4);transition:background .25s,width .25s var(--out)}
+.slidebtns button:hover::before{background:rgba(255,255,255,.75)}
+.slidebtns button:active::before{height:3px}
+.slidebtns button[aria-pressed=true]::before{background:var(--gold);width:38px}
+.slidebtns button:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:8px}
 .hero2-foot{position:absolute;z-index:2;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:22px var(--pad);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);border-top:1px solid rgba(255,255,255,.2)}
-.hero2-foot .cue{display:flex;align-items:center;gap:12px}
-.hero2-foot .cue i{width:1px;height:34px;background:var(--gold);animation:cue 1.8s var(--out) infinite;transform-origin:0 0}
-@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
-@media(max-width:860px){.hero2-copy{max-width:100%}.hero2-in{padding-bottom:140px}.hero2 .shade{background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(116,2,48,.45) 60%,rgba(0,0,0,.35) 100%)}.hero2-foot span{display:none}}
+@media(max-width:860px){.hero2-copy{max-width:100%}.hero2-in{padding-bottom:140px}.hero2 .shade{background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(116,2,48,.45) 60%,rgba(0,0,0,.35) 100%)}.hero2-foot{display:none}}
 /* transparent header over the dark hero: white nav, logo on a white plate */
 body.dark-hero header.nav:not(.stuck) nav.links a{color:rgba(255,255,255,.8)}
 body.dark-hero header.nav:not(.stuck) nav.links a:hover,body.dark-hero header.nav:not(.stuck) nav.links a.on{color:#fff}
@@ -325,7 +324,7 @@ body.dark-hero header.nav:not(.stuck) .btn.sm{background:var(--gold);border-colo
 @media(max-width:860px){.orbit-sec .grid2{grid-template-columns:1fr}.orbit-sec .orbit{justify-self:center}}
 footer .legal.credits{margin-top:14px;font-size:12px;line-height:1.6;color:var(--muted)}
 footer .legal.credits a{display:inline;text-decoration:underline;margin:0;font-size:12px}
-@media(prefers-reduced-motion:reduce){.hero2 .slide{transition:opacity .01ms;transform:none}.hero2-foot .cue i{animation:none}}
+@media(prefers-reduced-motion:reduce){.hero2 .slide{transition:opacity .01ms;transform:none}}
 @media(max-width:860px){header.nav .btn.sm{padding:10px 14px;font-size:13px;white-space:nowrap}body.dark-hero header.nav:not(.stuck) .logo{padding:6px 10px}body.dark-hero header.nav:not(.stuck) .logo img{height:28px}header.nav .logo img{height:30px}}
 .orbit .pill{transform-origin:50% 50%;will-change:transform}
 
@@ -411,8 +410,8 @@ body.menu-open{overflow:hidden}
   .hero2-sub{font-size:16px}
   .hero2 .cta{gap:10px}
   .hero2 .btn{width:100%;justify-content:center}
-  .slidebtns{gap:6px}
-  .slidebtns button{padding:10px 14px;font-size:11px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+  .slidebtns{gap:0}
+  .slidebtns button{width:34px;padding:0}
   .chips button{min-height:44px}
   .intro-skip{min-height:44px;display:inline-flex;align-items:center}
   .band .in-wrap{gap:24px}

@@ -11,10 +11,10 @@
 {% endblock %}
 
 {% block content %}
-<!-- 01 HERO — full-bleed photo slides, masked uppercase headline, slide pills -->
+<!-- 01 HERO — full-bleed photo slides, masked uppercase headline, slide indicators -->
 <section class="hero2" aria-label="Biggsmash Outreach">
   <div class="slides" data-parallax="0.18">
-    <div class="slide on" role="img" aria-label="Illustrative strategy meeting around a planning table" style="background-image:url({% static 'assets/img/strategy-meeting.png' %});background-position:center 40%"></div>
+    <div class="slide on" role="img" aria-label="Illustrative strategy meeting around a planning table" style="background-image:url({% static 'assets/img/strategy-meeting.jpg' %});background-position:center 40%"></div>
     <div class="slide" role="img" aria-label="Patna market, headquarters city" style="background-image:url({% static 'assets/img/patna.jpg' %});background-position:center 45%"></div>
     <div class="slide" role="img" aria-label="Ujjayanta Palace, Agartala" style="background-image:url({% static 'assets/img/agartala.jpg' %});background-position:center 55%"></div>
     <div class="slide" role="img" aria-label="Gurugram skyline at night" style="background-image:url({% static 'assets/img/gurugram.jpg' %});background-position:center 60%"></div>
@@ -27,14 +27,14 @@
       <p class="hero2-sub" data-reveal="up" data-i="3">One agency. <em>360°</em> solution.<br>Strategy · Creativity · Communication · Execution</p>
       <div class="cta" data-reveal="up" data-i="4"><a class="btn" href="{% url 'contact' %}">Talk to our team <span>→</span></a><a class="btn ghost" href="{% url 'services_list' %}">Explore services <span>→</span></a></div>
       <div class="slidebtns" role="group" aria-label="Hero slides" data-reveal="up" data-i="5">
-        <button type="button" aria-pressed="true">Planning table</button>
-        <button type="button" aria-pressed="false">Patna</button>
-        <button type="button" aria-pressed="false">Agartala</button>
-        <button type="button" aria-pressed="false">Gurugram</button>
+        <button type="button" aria-label="Planning table" aria-pressed="true"></button>
+        <button type="button" aria-label="Patna" aria-pressed="false"></button>
+        <button type="button" aria-label="Agartala" aria-pressed="false"></button>
+        <button type="button" aria-label="Gurugram" aria-pressed="false"></button>
       </div>
     </div>
   </div>
-  <div class="hero2-foot"><span>Patna · Agartala · Gurugram</span><a href="#orbit" class="cue">Scroll <i></i></a></div>
+  <div class="hero2-foot"><span>Patna · Agartala · Gurugram</span></div>
 </section>
 
 <!-- 01b ORBIT — the 360° system, revolving with scroll -->
